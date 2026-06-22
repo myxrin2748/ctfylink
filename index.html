@@ -836,7 +836,7 @@
         }
     }
     
-    // ============ FCM NOTIFICATIONS ============
+    // ============ FCM NOTIFICATIONS (FIXED) ============
     async function getFCMToken() {
         if (!fcmSupported || !messaging) {
             console.warn('[FCM] Messaging not supported');
@@ -849,7 +849,16 @@
         }
         
         try {
-            const currentToken = await messaging.getToken({ vapidKey: VAPID_KEY });
+            // Daftarkan service worker secara eksplisit (relatif terhadap root halaman)
+            const registration = await navigator.serviceWorker.register('./firebase-messaging-sw.js');
+            console.log('[FCM] Service Worker registered:', registration.scope);
+            
+            // Minta token FCM dengan service worker registration
+            const currentToken = await messaging.getToken({
+                vapidKey: VAPID_KEY,
+                serviceWorkerRegistration: registration
+            });
+            
             if (currentToken) {
                 console.log('[FCM] Token obtained:', currentToken.substring(0, 20) + '...');
                 return currentToken;
@@ -885,7 +894,9 @@
         if (!fcmSupported || !messaging || !fcmToken) return;
         
         try {
+            // Hapus token dari Firebase
             await messaging.deleteToken({ vapidKey: VAPID_KEY });
+            // Hapus dari Firestore
             if (firebaseInitialized && db) {
                 await db.collection("fcm_tokens").doc(fcmToken).delete();
             }
@@ -943,11 +954,12 @@
                 return;
             }
             
-            // Step 2: Get FCM token
+            // Step 2: Get FCM token (dengan service worker registration)
             fcmToken = await getFCMToken();
             
             if (!fcmToken) {
-                notifEnabled = true; // fallback basic
+                // Fallback ke notifikasi lokal biasa
+                notifEnabled = true;
                 localStorage.setItem(NOTIF_ENABLED_KEY, 'true');
                 localStorage.setItem(NOTIF_PROMPT_KEY, 'true');
                 localStorage.removeItem(FCM_TOKEN_KEY);
@@ -965,7 +977,7 @@
                 return;
             }
             
-            // Step 3: Save token
+            // Step 3: Simpan token
             localStorage.setItem(FCM_TOKEN_KEY, fcmToken);
             await saveFCMTokenToFirestore(fcmToken);
             
@@ -1006,6 +1018,7 @@
         updateNotifUI();
         
         if (notifEnabled) {
+            // Cek apakah izin notifikasi sudah dicabut
             if (typeof Notification !== 'undefined' && Notification.permission !== 'granted') {
                 notifEnabled = false;
                 localStorage.setItem(NOTIF_ENABLED_KEY, 'false');
@@ -1013,6 +1026,7 @@
                 updateNotifUI();
             }
             
+            // Validasi ulang token jika perlu
             if (fcmToken && fcmSupported && typeof Notification !== 'undefined' && Notification.permission === 'granted') {
                 getFCMToken().then(newToken => {
                     if (newToken && newToken !== fcmToken) {
@@ -1076,6 +1090,7 @@
     
     async function toggleNotif() {
         if (notifEnabled) {
+            // Matikan
             await deleteFCMToken();
             notifEnabled = false;
             fcmToken = null;
@@ -1084,6 +1099,7 @@
             updateNotifUI();
             showToast('🔕 Notifikasi dimatikan');
         } else {
+            // Coba aktifkan
             if (typeof Notification !== 'undefined' && Notification.permission === 'granted') {
                 await enableFCMNotifications();
             } else if (typeof Notification !== 'undefined' && Notification.permission === 'denied') {
