@@ -17,8 +17,8 @@ messaging.onBackgroundMessage((payload) => {
     const notificationTitle = payload.notification?.title || 'CTFY Update';
     const notificationOptions = {
         body: payload.notification?.body || 'Ada asset baru!',
-        icon: '/icon-192.png',
-        badge: '/badge-72.png',
+        icon: '/ctfylink/icon-192.png',
+        badge: '/ctfylink/badge-72.png',
         tag: 'ctfy-update'
     };
     self.registration.showNotification(notificationTitle, notificationOptions);
