@@ -235,15 +235,6 @@
             color: var(--primary);
             font-weight: 600;
         }
-        .sync-status.online {
-            color: var(--success);
-        }
-        .sync-status.offline {
-            color: var(--warning);
-        }
-        .sync-status.local {
-            color: var(--text-secondary);
-        }
 
         /* ===== TAB CONTENT ===== */
         .tab-page {
@@ -395,14 +386,14 @@
         .paid-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 14px;
+            border-radius: 16px;
+            padding: 16px;
             cursor: pointer;
             transition: all 0.2s;
         }
         .paid-card:hover {
             border-color: var(--primary);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
         }
         .paid-card .card-code {
             font-size: 0.5rem;
@@ -411,12 +402,13 @@
         }
         .paid-card .card-title {
             font-weight: 600;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             margin: 4px 0 2px;
         }
         .paid-card .card-category {
             font-size: 0.65rem;
             color: var(--text-secondary);
+            margin-bottom: 6px;
         }
         .paid-card .card-meta {
             display: flex;
@@ -574,6 +566,28 @@
             color: white;
         }
 
+        /* Tombol favorit - tanpa background */
+        .favorite-btn {
+            background: transparent !important;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 0.9rem;
+            padding: 2px;
+            transition: color 0.2s;
+            width: auto;
+            height: auto;
+        }
+        .favorite-btn:hover {
+            color: var(--warning);
+        }
+        .favorite-btn.active {
+            color: #fbbf24;
+        }
+        .favorite-btn i {
+            pointer-events: none;
+        }
+
         .shimmer {
             background: linear-gradient(90deg, var(--bg-hover) 25%, var(--border) 50%, var(--bg-hover) 75%);
             background-size: 200% 100%;
@@ -718,6 +732,7 @@
             text-align: center;
             font-size: 0.8rem;
             transition: background 0.2s;
+            cursor: pointer;
         }
         .modal-link:hover {
             background: rgba(99, 102, 241, 0.2);
@@ -766,6 +781,77 @@
             background: var(--primary);
             border-color: var(--primary);
             color: white;
+        }
+
+        /* ===== POPUP WHATSAPP CHANNEL ===== */
+        .wa-popup-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(12px);
+            align-items: center;
+            justify-content: center;
+            z-index: 3000;
+            padding: var(--spacing-md);
+        }
+        .wa-popup {
+            background: var(--bg-card);
+            border: 2px solid #25D366;
+            border-radius: 24px;
+            max-width: 400px;
+            width: 100%;
+            padding: var(--spacing-lg);
+            text-align: center;
+            animation: slideUp 0.3s ease;
+        }
+        .wa-popup .wa-icon {
+            font-size: 3.5rem;
+            color: #25D366;
+            margin-bottom: var(--spacing-sm);
+        }
+        .wa-popup h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-xs);
+        }
+        .wa-popup p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-md);
+            line-height: 1.6;
+        }
+        .wa-popup .wa-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .wa-popup .wa-btn {
+            flex: 1;
+            padding: 12px;
+            border-radius: 12px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+            min-width: 100px;
+        }
+        .wa-popup .wa-btn-join {
+            background: #25D366;
+            color: white;
+        }
+        .wa-popup .wa-btn-join:hover {
+            background: #1da851;
+            transform: translateY(-2px);
+        }
+        .wa-popup .wa-btn-skip {
+            background: var(--bg-hover);
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+        }
+        .wa-popup .wa-btn-skip:hover {
+            background: var(--border);
         }
 
         /* ===== TOAST ===== */
@@ -951,7 +1037,7 @@
                 <div class="stat-item"><i class="fas fa-layer-group"></i> <span class="num" id="statTotal">0</span> total</div>
                 <div class="stat-item"><i class="fas fa-search"></i> <span class="num" id="statFiltered">0</span> hasil</div>
                 <div class="stat-item"><i class="fas fa-tag"></i> <span class="num" id="statCategories">0</span> kategori</div>
-                <div class="stat-item"><i class="fas fa-download"></i> <span class="num" id="statDownloads">0</span> total downloads <span class="sync-status" id="syncStatus">● connecting...</span></div>
+                <div class="stat-item"><i class="fas fa-download"></i> <span class="num" id="statDownloads">0</span> total downloads</div>
             </div>
 
             <!-- ===== TAB 1: BERANDA ===== -->
@@ -1047,6 +1133,19 @@
         </div>
     </div>
 
+    <!-- ===== POPUP WHATSAPP CHANNEL ===== -->
+    <div class="wa-popup-overlay" id="waPopup">
+        <div class="wa-popup">
+            <div class="wa-icon"><i class="fab fa-whatsapp"></i></div>
+            <h3>Gabung Channel WhatsApp Kami!</h3>
+            <p>Dapatkan update asset terbaru, promo, dan info menarik lainnya langsung dari WhatsApp.</p>
+            <div class="wa-actions">
+                <button class="wa-btn wa-btn-join" id="waJoinBtn">💬 Gabung Sekarang</button>
+                <button class="wa-btn wa-btn-skip" id="waSkipBtn">Lanjutkan</button>
+            </div>
+        </div>
+    </div>
+
     <script>
         // ============ CONFIG ============
         const firebaseConfig = {
@@ -1062,6 +1161,7 @@
 
         const WA_NUMBER = '6285745535579';
         const ORDER_EMAIL = 'myxrin2748@gmail.com';
+        const WA_CHANNEL = 'https://whatsapp.com/channel/0029Vb7QGwsF1YlZl7PoIM0Z';
         const API_URL = 'https://script.google.com/macros/s/AKfycbxGBXI-W9rj6PzpeoSf_84HBq4CQnXwD9CoynIoRIfD9RWWyfArU7qf9R8yl4DTOchs/exec';
         const CACHE_KEY = 'ctfy_v90_data';
         const FAVORITES_KEY = 'ctfy_favorites';
@@ -1071,7 +1171,6 @@
         let db = null;
         let firebaseInitialized = false;
         let downloadSession = new Set();
-        let isOffline = false;
         let isLoading = false;
         let allItems = [],
             favorites = new Set(),
@@ -1080,26 +1179,18 @@
         let fuseInstance = null;
         let searchTimer = null;
         let currentTab = 'beranda';
+        let pendingLink = null; // untuk menyimpan link yang akan dibuka setelah popup WA
 
         // ============ FIREBASE INIT ============
         try {
             firebase.initializeApp(firebaseConfig);
             db = firebase.firestore();
             firebaseInitialized = true;
-            updateSyncStatus('● live', 'online');
         } catch (e) {
             console.error('Firebase init error:', e);
-            updateSyncStatus('● local', 'local');
-            isOffline = true;
         }
 
         // ============ HELPER FUNCTIONS ============
-        function updateSyncStatus(text, type = 'online') {
-            const el = document.getElementById('syncStatus');
-            if (el) { el.textContent = text;
-                el.className = 'sync-status ' + type; }
-        }
-
         function escapeHTML(str) { if (!str) return ''; return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;')
             .replace(/>/g, '&gt;'); }
 
@@ -1199,7 +1290,7 @@
 
         // ============ FIRESTORE DOWNLOADS ============
         async function incrementDownloadFirebase(id) {
-            if (!firebaseInitialized || !db || isOffline) return false;
+            if (!firebaseInitialized || !db) return false;
             try {
                 await db.collection("downloads")
                     .doc(id)
@@ -1209,16 +1300,14 @@
         }
 
         async function loadFirebaseDownloads() {
-            if (!firebaseInitialized || !db || isOffline) return;
+            if (!firebaseInitialized || !db) return;
             try {
                 const snapshot = await db.collection("downloads").get();
                 let downloads = {};
                 snapshot.forEach(doc => { downloads[doc.id] = doc.data().count || 0; });
                 localStorage.setItem(DOWNLOADS_KEY, JSON.stringify(downloads));
-                updateSyncStatus('● live', 'online');
             } catch (err) {
                 console.error(err);
-                updateSyncStatus('● offline', 'offline');
             }
         }
 
@@ -1242,8 +1331,7 @@
         function isFavorite(id) { return favorites.has(id); }
 
         function updateFavUI() {
-            const btn = document.getElementById('showFavOnlyBtn');
-            if (btn) btn.style.color = currentFilter === 'fav' ? 'var(--primary)' : 'var(--text-secondary)';
+            // tidak perlu
         }
 
         // ============ SEARCH ============
@@ -1325,7 +1413,6 @@
                 return;
             }
             container.innerHTML = paidItems.map(item => {
-                const tipe = getItemType(item);
                 const badgeText = getPriceLabel(item);
                 return `
                     <div class="paid-card" onclick="openModalByCode('${escapeHTML(item.Kode)}')">
@@ -1430,7 +1517,6 @@
                 chip.classList.toggle('active', chip.dataset.filter === currentFilter);
             });
             document.getElementById('favFilterChip')?.classList.toggle('active', currentFilter === 'fav');
-            updateFavUI();
         }
 
         function renderAll() {
@@ -1456,6 +1542,41 @@
             showToast('Filter direset');
         }
 
+        // ============ POPUP WHATSAPP CHANNEL ============
+        function showWAPopup(link) {
+            pendingLink = link;
+            document.getElementById('waPopup').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function hideWAPopup() {
+            document.getElementById('waPopup').style.display = 'none';
+            document.body.style.overflow = '';
+            pendingLink = null;
+        }
+
+        // Event untuk tombol popup
+        document.getElementById('waJoinBtn').addEventListener('click', function() {
+            // Buka channel WA
+            window.open(WA_CHANNEL, '_blank');
+            // Lanjutkan ke link tujuan setelah beberapa saat
+            if (pendingLink) {
+                setTimeout(() => {
+                    window.open(pendingLink, '_blank');
+                    hideWAPopup();
+                }, 500);
+            } else {
+                hideWAPopup();
+            }
+        });
+
+        document.getElementById('waSkipBtn').addEventListener('click', function() {
+            if (pendingLink) {
+                window.open(pendingLink, '_blank');
+            }
+            hideWAPopup();
+        });
+
         // ============ MODAL ============
         function renderModalLinks(item) {
             const container = document.getElementById('modalLinks');
@@ -1480,8 +1601,8 @@
                 const emailLink =
                     `mailto:${ORDER_EMAIL}?subject=${encodeURIComponent(emailSubject)}&body=${emailBody}`;
                 container.innerHTML = `
-                    <a href="${waLink}" target="_blank" rel="noopener noreferrer" class="modal-link order-wa"><i class="fab fa-whatsapp"></i> Order via WhatsApp</a>
-                    <a href="${emailLink}" target="_blank" rel="noopener noreferrer" class="modal-link" style="background:rgba(99,102,241,0.1);color:var(--primary);"><i class="far fa-envelope"></i> Order via Email</a>
+                    <a class="modal-link order-wa" onclick="handleLinkClick('${waLink}')"><i class="fab fa-whatsapp"></i> Order via WhatsApp</a>
+                    <a class="modal-link" style="background:rgba(99,102,241,0.1);color:var(--primary);" onclick="handleLinkClick('${emailLink}')"><i class="far fa-envelope"></i> Order via Email</a>
                 `;
                 return;
             }
@@ -1497,7 +1618,7 @@
                         url: item.LinkTiktok });
                     container.innerHTML = links.length ?
                         links.map(l =>
-                            `<a href="${l.url}" target="_blank" rel="noopener noreferrer" class="modal-link" onclick="trackDownload('${escapeHTML(item.Kode)}')">${l.label}</a>`
+                            `<a class="modal-link" onclick="handleLinkClick('${l.url}','${escapeHTML(item.Kode)}')">${l.label}</a>`
                             ).join('') :
                         '<div style="text-align:center;padding:20px;">Link akan segera tersedia</div>';
                 } else {
@@ -1525,13 +1646,25 @@
                 url: item.LinkTiktok });
             container.innerHTML = links.length ?
                 links.map(l =>
-                    `<a href="${l.url}" target="_blank" rel="noopener noreferrer" class="modal-link" onclick="trackDownload('${escapeHTML(item.Kode)}')">${l.label}</a>`
+                    `<a class="modal-link" onclick="handleLinkClick('${l.url}','${escapeHTML(item.Kode)}')">${l.label}</a>`
                     ).join('') :
                 '<div style="text-align:center;padding:20px;">Link akan segera tersedia</div>';
         }
 
+        function handleLinkClick(url, code) {
+            // Jika ini link download, track dulu
+            if (code) {
+                trackDownload(code);
+            }
+            // Tampilkan popup WA
+            showWAPopup(url);
+        }
+
         function handleAdClick(code, adLink) {
-            if (adLink && adLink !== '#') window.open(adLink, '_blank');
+            if (adLink && adLink !== '#') {
+                // Tampilkan popup WA sebelum buka link iklan
+                showWAPopup(adLink);
+            }
             sessionStorage.setItem('ad_done_' + code, 'true');
             if (currentItem && currentItem.Kode === code) renderModalLinks(currentItem);
         }
@@ -1608,6 +1741,10 @@
             let downloads = JSON.parse(localStorage.getItem(DOWNLOADS_KEY) || '{}');
             downloads[id] = (downloads[id] || 0) + 1;
             localStorage.setItem(DOWNLOADS_KEY, JSON.stringify(downloads));
+            // Update stats tanpa re-render penuh agar tidak mengganggu
+            updateStats();
+            // Update card yang sedang tampil (jika ada)
+            // Tapi kita bisa render ulang semua agar konsisten
             renderAll();
             showToast('⬇️ Download dicatat!');
         }
@@ -1632,7 +1769,7 @@
         async function fetchAndUpdate() {
             try {
                 const controller = new AbortController();
-                const timeoutId = setTimeout(() => controller.abort(), 10000);
+                const timeoutId = setTimeout(() => controller.abort(), 8000);
                 const res = await fetch(API_URL, { signal: controller.signal });
                 clearTimeout(timeoutId);
                 if (!res.ok) throw new Error('Status ' + res.status);
@@ -1640,23 +1777,23 @@
                 if (Array.isArray(raw) && raw.length) {
                     allItems = raw.filter(i => i && typeof i === 'object').reverse();
                     localStorage.setItem(CACHE_KEY, JSON.stringify({ data: allItems, timestamp: Date.now() }));
-                    isOffline = false;
-                    updateSyncStatus('● live', 'online');
                     initFuse();
                     renderAll();
                     openAssetFromURL();
-                    showToast(`<i class="fas fa-check inline-icon"></i> ${allItems.length} asset dimuat`);
+                    // Tampilkan toast sukses hanya jika belum ada data sebelumnya
+                    if (document.querySelector('.shimmer')) {
+                        showToast(`<i class="fas fa-check inline-icon"></i> ${allItems.length} asset dimuat`);
+                    }
                 } else {
                     throw new Error('Data kosong');
                 }
             } catch (err) {
                 console.warn('Gagal fetch API:', err.message);
+                // Jika belum ada data, tampilkan pesan error
                 if (!allItems.length) {
                     document.getElementById('cardGrid').innerHTML =
-                        `<div class="empty-state"><i class="fas fa-wifi"></i><h3>Gagal memuat data</h3><p>Server tidak merespons. Menggunakan cache jika tersedia.</p><button class="chip" onclick="loadData()">🔄 Coba Lagi</button></div>`;
+                        `<div class="empty-state"><i class="fas fa-wifi"></i><h3>Gagal memuat data</h3><p>Periksa koneksi internet Anda.</p><button class="chip" onclick="loadData()">🔄 Coba Lagi</button></div>`;
                 }
-                updateSyncStatus('● offline', 'offline');
-                isOffline = true;
             }
         }
 
@@ -1667,7 +1804,9 @@
             if (!hasCache) {
                 document.getElementById('cardGrid').innerHTML = Array(8).fill('<div class="shimmer"></div>').join('');
             }
+            // Load downloads dari Firestore (tidak blokir)
             loadFirebaseDownloads();
+            // Fetch data terbaru
             await fetchAndUpdate();
             isLoading = false;
         }
@@ -1768,6 +1907,7 @@
         window.trackDownload = trackDownload;
         window.copyCode = copyCode;
         window.handleAdClick = handleAdClick;
+        window.handleLinkClick = handleLinkClick;
         window.loadData = loadData;
 
         // ============ INIT ============
