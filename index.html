@@ -1,52 +1,57 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="CTFY - Template maupun Assets Alight Motion dari @ctfy. Temukan preset, template, dan resource yang dipakai kreator nyata.">
-    <meta name="theme-color" content="#6366f1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    
-    <meta property="og:title" content="CTFY | Template maupun Assets Alight Motion dari @ctfy">
-    <meta property="og:description" content="Preset, Template & Asset Alight Motion dari @ctfy — Temukan asset pilihan untuk motion designer Indonesia.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://ctfy.my.id/og-image.png">
-    <meta property="og:url" content="https://ctfy.my.id">
-    <meta property="og:site_name" content="CTFY">
-    <meta property="og:locale" content="id_ID">
-    <meta name="twitter:card" content="summary_large_image">
-    <link rel="canonical" href="https://ctfy.my.id">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 200'><text y='.9em' font-size='160' font-weight='bold' fill='%236366f1'>CTFY</text></svg>">
-    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description" content="CTFY - Template maupun Assets Alight Motion dari @ctfy" />
+    <meta name="theme-color" content="#6366f1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <meta property="og:title" content="CTFY | Template maupun Assets Alight Motion dari @ctfy" />
+    <meta property="og:description" content="Preset, Template & Asset Alight Motion dari @ctfy — Temukan asset pilihan untuk motion designer Indonesia." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://ctfy.my.id/og-image.png" />
+    <meta property="og:url" content="https://ctfy.my.id" />
+    <meta property="og:site_name" content="CTFY" />
+    <meta property="og:locale" content="id_ID" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://ctfy.my.id" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 200'><text y='.9em' font-size='160' font-weight='bold' fill='%236366f1'>CTFY</text></svg>" />
+
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "CTFY",
-        "url": "https://ctfy.my.id",
-        "description": "Template maupun Assets Alight Motion dari @ctfy",
-        "author": {
-            "@type": "Person",
-            "name": "imctfy"
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "CTFY",
+            "url": "https://ctfy.my.id",
+            "description": "Template maupun Assets Alight Motion dari @ctfy",
+            "author": { "@type": "Person", "name": "imctfy" }
         }
-    }
     </script>
-    
+
     <title>CTFY | Template maupun Assets Alight Motion dari @ctfy</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
-    
+
     <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-messaging-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-analytics-compat.js"></script>
-    
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js">
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js">
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-messaging-compat.js">
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-analytics-compat.js">
+    </script>
+
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         :root {
             --primary: #6366f1;
             --primary-dark: #4f46e5;
@@ -66,8 +71,9 @@
             --spacing-md: 24px;
             --spacing-lg: 40px;
             --spacing-xl: 60px;
+            --nav-height: 70px;
         }
-        
+
         [data-theme="light"] {
             --bg: #f5f5f5;
             --bg-card: #ffffff;
@@ -76,21 +82,23 @@
             --text: #1a1a1a;
             --text-secondary: #666666;
         }
-        
+
         body {
             font-family: 'Inter', sans-serif;
             background: var(--bg);
             color: var(--text);
             transition: background 0.2s, color 0.2s;
             line-height: 1.5;
+            padding-bottom: var(--nav-height);
         }
-        
+
         .container {
             max-width: var(--container);
             margin: 0 auto;
             padding: 0 var(--spacing-md);
         }
-        
+
+        /* ===== HEADER ===== */
         .header {
             position: sticky;
             top: 0;
@@ -100,34 +108,28 @@
             border-bottom: 1px solid var(--border);
             padding: var(--spacing-sm) 0;
         }
-        
         [data-theme="light"] .header {
             background: rgba(245, 245, 245, 0.9);
         }
-        
         .header-inner {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
         .logo {
             display: flex;
             align-items: center;
             text-decoration: none;
             cursor: pointer;
         }
-        
         .logo svg {
             height: 38px;
             width: auto;
         }
-        
         .header-actions {
             display: flex;
             gap: var(--spacing-sm);
         }
-        
         .icon-btn {
             background: none;
             border: none;
@@ -137,122 +139,139 @@
             padding: var(--spacing-xs);
             transition: color 0.2s;
         }
-        
         .icon-btn:hover {
             color: var(--primary);
         }
-        
+
+        /* ===== HERO ===== */
         .hero {
             text-align: center;
-            padding: var(--spacing-xl) 0 var(--spacing-lg);
+            padding: var(--spacing-lg) 0 var(--spacing-md);
         }
-        
         .hero h1 {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             font-weight: 800;
-            margin-bottom: var(--spacing-sm);
+            margin-bottom: var(--spacing-xs);
             background: linear-gradient(135deg, #fff, var(--primary-light));
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
         }
-        
         .hero p {
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: var(--text-secondary);
             max-width: 600px;
             margin: 0 auto;
         }
-        
+
+        /* ===== SEARCH & FILTERS ===== */
         .search-panel {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 60px;
             padding: 6px;
-            margin-bottom: var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             gap: 8px;
         }
-        
         .search-icon {
             padding-left: var(--spacing-md);
             color: var(--text-secondary);
         }
-        
         .search-input {
             flex: 1;
-            min-width: 180px;
+            min-width: 140px;
             background: none;
             border: none;
-            padding: 12px 0;
+            padding: 10px 0;
             color: var(--text);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             outline: none;
         }
-        
         .filter-divider {
             width: 1px;
-            height: 30px;
+            height: 28px;
             background: var(--border);
         }
-        
         .chips-wrapper {
             display: flex;
             gap: 6px;
             flex-wrap: wrap;
             padding-right: var(--spacing-sm);
         }
-        
         .chip {
-            padding: 6px 14px;
+            padding: 5px 12px;
             background: var(--bg-hover);
             border: 1px solid var(--border);
             border-radius: 100px;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             cursor: pointer;
             transition: all 0.2s;
             color: var(--text-secondary);
+            white-space: nowrap;
         }
-        
-        .chip:hover, .chip.active {
+        .chip:hover,
+        .chip.active {
             background: var(--primary);
             border-color: var(--primary);
             color: white;
         }
-        
+
+        /* ===== STATS ===== */
         .stats-bar {
             display: flex;
             gap: var(--spacing-md);
-            margin-bottom: var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
             padding-bottom: var(--spacing-sm);
             border-bottom: 1px solid var(--border);
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--text-secondary);
             flex-wrap: wrap;
         }
-        
         .stat-item {
             display: flex;
             align-items: center;
             gap: 6px;
         }
-        
         .stat-item .num {
             color: var(--primary);
             font-weight: 600;
         }
-        
-        .stat-item .sync-status {
-            font-size: 0.6rem;
-            margin-left: 4px;
+        .sync-status.online {
+            color: var(--success);
         }
-        .sync-status.online { color: var(--success); }
-        .sync-status.offline { color: var(--warning); }
-        .sync-status.local { color: var(--text-secondary); }
-        
-        .featured-section { margin-bottom: var(--spacing-lg); }
+        .sync-status.offline {
+            color: var(--warning);
+        }
+        .sync-status.local {
+            color: var(--text-secondary);
+        }
+
+        /* ===== TAB CONTENT ===== */
+        .tab-page {
+            display: none;
+            animation: fadeUp 0.25s ease;
+        }
+        .tab-page.active {
+            display: block;
+        }
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== FEATURED (Beranda) ===== */
+        .featured-section {
+            margin-bottom: var(--spacing-lg);
+        }
         .featured-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -273,14 +292,20 @@
             border-bottom: 1px solid var(--border);
         }
         .featured-column-title {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 600;
             display: flex;
             align-items: center;
             gap: 8px;
         }
-        .featured-column-title i { color: var(--primary); font-size: 0.85rem; }
-        .featured-column-link { font-size: 0.7rem; color: var(--text-secondary); cursor: pointer; }
+        .featured-column-title i {
+            color: var(--primary);
+        }
+        .featured-column-link {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+        }
         .featured-list {
             display: flex;
             flex-direction: column;
@@ -290,7 +315,7 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            padding: 10px 12px;
+            padding: 8px 10px;
             background: var(--bg-hover);
             border: 1px solid transparent;
             border-radius: 12px;
@@ -302,7 +327,7 @@
             transform: translateX(4px);
         }
         .featured-list-rank {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             font-weight: 700;
             color: var(--primary);
             min-width: 20px;
@@ -313,36 +338,102 @@
             min-width: 0;
         }
         .featured-list-code {
-            font-size: 0.55rem;
+            font-size: 0.5rem;
             color: var(--text-secondary);
             font-family: monospace;
         }
         .featured-list-title {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 600;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
         .featured-list-meta {
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             color: var(--text-secondary);
             display: flex;
             gap: 8px;
             align-items: center;
+            flex-wrap: wrap;
         }
         .featured-list-badge {
-            font-size: 0.55rem;
+            font-size: 0.5rem;
             padding: 1px 6px;
             border-radius: 100px;
         }
-        .badge-pro { background: rgba(139,92,246,0.15); color: #c4b5fd; }
-        .badge-free { background: rgba(16,185,129,0.1); color: var(--success); }
-        .badge-paid { background: rgba(239,68,68,0.15); color: var(--error); }
-        .badge-coming { background: rgba(99,102,241,0.1); color: var(--primary-light); }
-        .badge-trending { background: rgba(245,158,11,0.15); color: var(--warning); }
-        .trending-icon { color: var(--warning); font-size: 0.6rem; }
-        
+        .badge-pro {
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+        }
+        .badge-free {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+        }
+        .badge-paid {
+            background: rgba(239, 68, 68, 0.15);
+            color: var(--error);
+        }
+        .badge-coming {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary-light);
+        }
+        .badge-trending {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--warning);
+        }
+        .trending-icon {
+            color: var(--warning);
+            font-size: 0.55rem;
+        }
+
+        /* ===== PAID LIST (Beranda) ===== */
+        .paid-section {
+            margin-bottom: var(--spacing-lg);
+        }
+        .paid-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: var(--spacing-sm);
+        }
+        .paid-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 14px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .paid-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+        .paid-card .card-code {
+            font-size: 0.5rem;
+            color: var(--text-secondary);
+            font-family: monospace;
+        }
+        .paid-card .card-title {
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin: 4px 0 2px;
+        }
+        .paid-card .card-category {
+            font-size: 0.65rem;
+            color: var(--text-secondary);
+        }
+        .paid-card .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid var(--border);
+            font-size: 0.6rem;
+            color: var(--text-secondary);
+        }
+
+        /* ===== GRID (Semua Asset) ===== */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -358,7 +449,10 @@
             transition: all 0.2s;
             position: relative;
         }
-        .card:hover { transform: translateY(-3px); border-color: var(--primary); }
+        .card:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary);
+        }
         .card.coming-soon {
             opacity: 0.7;
             cursor: default;
@@ -372,71 +466,118 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: rgba(99,102,241,0.03);
+            background: rgba(99, 102, 241, 0.03);
             border-radius: 16px;
             pointer-events: none;
         }
         .coming-soon-label {
             display: inline-block;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             padding: 2px 10px;
-            background: linear-gradient(135deg, rgba(99,102,241,0.15), rgba(139,92,246,0.1));
-            border: 1px solid rgba(99,102,241,0.3);
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.1));
+            border: 1px solid rgba(99, 102, 241, 0.3);
             border-radius: 100px;
             color: var(--primary-light);
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
         .coming-soon-title {
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 700;
             background: linear-gradient(135deg, var(--text), var(--text-secondary));
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
         }
+
         .card-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 4px;
         }
-        .card-code { font-size: 0.55rem; color: var(--text-secondary); font-family: monospace; }
+        .card-code {
+            font-size: 0.5rem;
+            color: var(--text-secondary);
+            font-family: monospace;
+        }
         .card-badge {
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             padding: 2px 8px;
             border-radius: 100px;
-            background: rgba(99,102,241,0.15);
+            background: rgba(99, 102, 241, 0.15);
             color: var(--primary);
         }
-        .card-badge.pro { background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(99,102,241,0.1)); border: 1px solid rgba(139,92,246,0.4); color: #c4b5fd; }
-        .card-badge.free { background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3); color: var(--success); }
-        .card-badge.paid { background: rgba(239,68,68,0.15); border: 1px solid rgba(239,68,68,0.4); color: var(--error); }
-        .card-badge.trending { background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.3); color: var(--warning); }
-        
-        .inline-icon {
-            font-size: 0.9em;
-            width: auto;
-            height: auto;
-            vertical-align: middle;
-            margin-right: 4px;
+        .card-badge.pro {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(99, 102, 241, 0.1));
+            border: 1px solid rgba(139, 92, 246, 0.4);
+            color: #c4b5fd;
         }
-        
-        .card-meta span, .featured-meta span, .toast {
-            display: inline-flex;
-            align-items: center;
+        .card-badge.free {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: var(--success);
+        }
+        .card-badge.paid {
+            background: rgba(239, 68, 68, 0.15);
+            border: 1px solid rgba(239, 68, 68, 0.4);
+            color: var(--error);
+        }
+        .card-badge.trending {
+            background: rgba(245, 158, 11, 0.15);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            color: var(--warning);
+        }
+        .card-title {
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 2px;
+            line-height: 1.4;
+        }
+        .card-category {
+            font-size: 0.65rem;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+        }
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
             gap: 4px;
+            margin-bottom: 8px;
         }
-        .favorite-btn { background: none; border: none; color: var(--text-secondary); cursor: pointer; font-size: 0.9rem; padding: 4px; }
-        .favorite-btn.active { color: #fbbf24; }
-        .card-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 4px; line-height: 1.4; }
-        .card-category { font-size: 0.7rem; color: var(--text-secondary); margin-bottom: 8px; }
-        .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
-        .tag { font-size: 0.6rem; padding: 2px 6px; background: rgba(99,102,241,0.1); border-radius: 100px; color: var(--text-secondary); }
-        .card-meta { display: flex; gap: 12px; font-size: 0.65rem; color: var(--text-secondary); padding-top: 10px; border-top: 1px solid var(--border); flex-wrap: wrap; }
-        .card-meta .download-count { color: var(--success); }
-        .copy-code-btn { background: none; border: none; color: var(--text-secondary); cursor: pointer; font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; transition: all 0.2s; }
-        .copy-code-btn:hover { background: var(--primary); color: white; }
-        
+        .tag {
+            font-size: 0.55rem;
+            padding: 2px 6px;
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 100px;
+            color: var(--text-secondary);
+        }
+        .card-meta {
+            display: flex;
+            gap: 12px;
+            font-size: 0.6rem;
+            color: var(--text-secondary);
+            padding-top: 8px;
+            border-top: 1px solid var(--border);
+            flex-wrap: wrap;
+        }
+        .card-meta .download-count {
+            color: var(--success);
+        }
+        .copy-code-btn {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 0.6rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+        .copy-code-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
         .shimmer {
             background: linear-gradient(90deg, var(--bg-hover) 25%, var(--border) 50%, var(--bg-hover) 75%);
             background-size: 200% 100%;
@@ -444,44 +585,199 @@
             border-radius: 16px;
             height: 180px;
         }
-        @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
-        
-        .empty-state { text-align: center; padding: var(--spacing-xl) var(--spacing-md); }
-        .empty-state i { font-size: 2.5rem; color: var(--text-secondary); opacity: 0.5; margin-bottom: var(--spacing-sm); }
-        .empty-state h3 { font-size: 1.1rem; margin-bottom: var(--spacing-xs); }
-        .empty-state p { font-size: 0.8rem; color: var(--text-secondary); margin-bottom: var(--spacing-md); }
-        
+        @keyframes shimmer {
+            0% {
+                background-position: 200% 0;
+            }
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: var(--spacing-xl) var(--spacing-md);
+        }
+        .empty-state i {
+            font-size: 2.5rem;
+            color: var(--text-secondary);
+            opacity: 0.5;
+            margin-bottom: var(--spacing-sm);
+        }
+        .empty-state h3 {
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-xs);
+        }
+        .empty-state p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-md);
+        }
+
+        /* ===== BOTTOM NAV ===== */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 200;
+            background: rgba(10, 10, 10, 0.92);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: var(--nav-height);
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+        [data-theme="light"] .bottom-nav {
+            background: rgba(245, 245, 245, 0.95);
+        }
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 0.6rem;
+            cursor: pointer;
+            padding: 6px 16px;
+            transition: color 0.2s;
+            font-family: 'Inter', sans-serif;
+            position: relative;
+        }
+        .nav-item i {
+            font-size: 1.3rem;
+            transition: transform 0.2s;
+        }
+        .nav-item span {
+            font-weight: 500;
+        }
+        .nav-item.active {
+            color: var(--primary);
+        }
+        .nav-item.active i {
+            transform: translateY(-2px);
+        }
+        .nav-item .nav-badge {
+            position: absolute;
+            top: 2px;
+            right: 4px;
+            background: var(--error);
+            color: white;
+            font-size: 0.5rem;
+            padding: 1px 5px;
+            border-radius: 100px;
+            min-width: 16px;
+            text-align: center;
+        }
+
+        /* ===== MODAL ===== */
         .modal {
             display: none;
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.9);
+            background: rgba(0, 0, 0, 0.9);
             backdrop-filter: blur(16px);
             align-items: center;
             justify-content: center;
             z-index: 1000;
             padding: var(--spacing-md);
         }
-        .modal-content { background: var(--bg-card); border-radius: 20px; max-width: 480px; width: 100%; max-height: 85vh; overflow-y: auto; padding: var(--spacing-md); }
-        .modal-code { font-size: 0.7rem; color: var(--text-secondary); font-family: monospace; margin-bottom: 4px; }
-        .modal-detail-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 0.8rem; }
-        .modal-links { margin: var(--spacing-md) 0; }
-        .modal-link { display: block; padding: 10px; background: rgba(99,102,241,0.1); border-radius: 10px; margin-bottom: 8px; text-decoration: none; color: var(--primary); text-align: center; font-size: 0.85rem; transition: background 0.2s; }
-        .modal-link:hover { background: rgba(99,102,241,0.2); }
-        .modal-link.order-wa { background: rgba(16,185,129,0.1); color: var(--success); }
-        .modal-link.order-wa:hover { background: rgba(16,185,129,0.2); }
-        .ad-button { background: linear-gradient(135deg, #8b5cf6, #6366f1); border: none; color: white; padding: 12px; border-radius: 10px; font-weight: 600; cursor: pointer; text-align: center; display: block; width: 100%; margin-bottom: 8px; transition: opacity 0.2s; }
-        .ad-button:hover { opacity: 0.9; }
-        .share-buttons { display: flex; gap: 10px; }
-        .share-btn { flex: 1; padding: 10px; background: var(--bg-hover); border: 1px solid var(--border); border-radius: 10px; cursor: pointer; text-align: center; font-size: 0.8rem; color: var(--text); transition: all 0.2s; }
-        .share-btn:hover { background: var(--primary); border-color: var(--primary); color: white; }
-        
-        /* Notification Popup */
+        .modal-content {
+            background: var(--bg-card);
+            border-radius: 20px;
+            max-width: 480px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: var(--spacing-md);
+        }
+        .modal-code {
+            font-size: 0.65rem;
+            color: var(--text-secondary);
+            font-family: monospace;
+            margin-bottom: 4px;
+        }
+        .modal-detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.75rem;
+        }
+        .modal-links {
+            margin: var(--spacing-md) 0;
+        }
+        .modal-link {
+            display: block;
+            padding: 10px;
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 10px;
+            margin-bottom: 8px;
+            text-decoration: none;
+            color: var(--primary);
+            text-align: center;
+            font-size: 0.8rem;
+            transition: background 0.2s;
+        }
+        .modal-link:hover {
+            background: rgba(99, 102, 241, 0.2);
+        }
+        .modal-link.order-wa {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+        }
+        .modal-link.order-wa:hover {
+            background: rgba(16, 185, 129, 0.2);
+        }
+        .ad-button {
+            background: linear-gradient(135deg, #8b5cf6, #6366f1);
+            border: none;
+            color: white;
+            padding: 12px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            display: block;
+            width: 100%;
+            margin-bottom: 8px;
+            transition: opacity 0.2s;
+        }
+        .ad-button:hover {
+            opacity: 0.9;
+        }
+        .share-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .share-btn {
+            flex: 1;
+            padding: 10px;
+            background: var(--bg-hover);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--text);
+            transition: all 0.2s;
+        }
+        .share-btn:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+
+        /* ===== NOTIF POPUP ===== */
         .notif-overlay {
             display: none;
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.7);
+            background: rgba(0, 0, 0, 0.7);
             backdrop-filter: blur(8px);
             align-items: center;
             justify-content: center;
@@ -498,25 +794,37 @@
             text-align: center;
             animation: slideUp 0.3s ease;
         }
-        @keyframes slideUp { from { transform: translateY(40px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        .notif-icon {
-            display: flex;
-            justify-content: center;
-            margin-bottom: var(--spacing-sm);
+        @keyframes slideUp {
+            from {
+                transform: translateY(40px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
         .notif-icon svg {
             width: 56px;
             height: 56px;
             animation: pulse 2s infinite;
         }
-        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+        @keyframes pulse {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
         .notif-title {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 700;
             margin-bottom: var(--spacing-xs);
         }
         .notif-desc {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--text-secondary);
             margin-bottom: var(--spacing-md);
         }
@@ -531,7 +839,7 @@
             border: none;
             font-weight: 600;
             cursor: pointer;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             transition: all 0.2s;
         }
         .notif-btn-primary {
@@ -559,952 +867,1253 @@
             display: none;
             width: 20px;
             height: 20px;
-            border: 2px solid rgba(255,255,255,0.3);
+            border: 2px solid rgba(255, 255, 255, 0.3);
             border-top-color: white;
             border-radius: 50%;
             animation: spin 0.8s linear infinite;
             margin: 0 auto;
         }
-        @keyframes spin { to { transform: rotate(360deg); } }
-        
-        .footer { text-align: center; padding: var(--spacing-lg) var(--spacing-md); border-top: 1px solid var(--border); color: var(--text-secondary); font-size: 0.75rem; }
-        .footer-brand { font-size: 1.2rem; font-weight: 700; background: linear-gradient(135deg, var(--primary), var(--primary-light)); background-clip: text; -webkit-background-clip: text; color: transparent; margin-bottom: 4px; }
-        .footer-tagline { font-size: 0.7rem; color: var(--text-secondary); margin-bottom: var(--spacing-md); }
-        .footer-social { display: flex; justify-content: center; gap: var(--spacing-md); margin-bottom: var(--spacing-sm); }
-        .footer-social a { color: var(--text-secondary); font-size: 1.3rem; transition: color 0.2s; text-decoration: none; }
-        .footer-social a:hover { color: var(--primary); }
-        .footer-links { display: flex; justify-content: center; gap: var(--spacing-md); margin-bottom: var(--spacing-sm); flex-wrap: wrap; }
-        .footer-links a { color: var(--text-secondary); text-decoration: none; transition: color 0.2s; font-size: 0.75rem; }
-        .footer-links a:hover { color: var(--primary); }
-        .footer-copy { font-size: 0.65rem; opacity: 0.5; }
-        
-        .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: var(--bg-card); border: 1px solid var(--primary); border-radius: 100px; padding: 8px 20px; z-index: 1100; font-size: 0.8rem; animation: fadeInUp 0.2s ease; }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateX(-50%) translateY(20px); } to { opacity: 1; transform: translateX(-50%) translateY(0); } }
-        
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* ===== TOAST ===== */
+        .toast {
+            position: fixed;
+            bottom: calc(var(--nav-height) + 16px);
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--bg-card);
+            border: 1px solid var(--primary);
+            border-radius: 100px;
+            padding: 8px 20px;
+            z-index: 1100;
+            font-size: 0.75rem;
+            animation: fadeInUp 0.2s ease;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            text-align: center;
+            padding: var(--spacing-md) var(--spacing-md);
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.7rem;
+            margin-top: var(--spacing-md);
+        }
+        .footer-brand {
+            font-size: 1.1rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .footer-tagline {
+            font-size: 0.65rem;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-sm);
+        }
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-sm);
+        }
+        .footer-social a {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            transition: color 0.2s;
+            text-decoration: none;
+        }
+        .footer-social a:hover {
+            color: var(--primary);
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-sm);
+            flex-wrap: wrap;
+        }
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+            font-size: 0.7rem;
+        }
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        .footer-copy {
+            font-size: 0.6rem;
+            opacity: 0.5;
+        }
+
         @media (max-width: 768px) {
-            .hero h1 { font-size: 1.6rem; }
-            .search-panel { border-radius: 20px; flex-direction: column; align-items: stretch; padding: 12px; }
-            .search-icon { display: none; }
-            .filter-divider { display: none; }
-            .grid { grid-template-columns: 1fr; }
-            .featured-grid { grid-template-columns: 1fr; }
-            .notif-popup { max-width: 90vw; }
+            .hero h1 {
+                font-size: 1.4rem;
+            }
+            .search-panel {
+                border-radius: 20px;
+                flex-direction: column;
+                align-items: stretch;
+                padding: 12px;
+            }
+            .search-icon {
+                display: none;
+            }
+            .filter-divider {
+                display: none;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+            .paid-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .notif-popup {
+                max-width: 90vw;
+            }
+            .bottom-nav {
+                height: 60px;
+            }
+            :root {
+                --nav-height: 60px;
+            }
+            .nav-item i {
+                font-size: 1.1rem;
+            }
+            .nav-item span {
+                font-size: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .paid-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
 <body>
 
-<header class="header">
-    <div class="container">
-        <div class="header-inner">
-            <a class="logo" href="/">
-                <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200" preserveAspectRatio="xMidYMid meet">
-                    <g transform="translate(0.000000,200.000000) scale(0.100000,-0.100000)" fill="#ffffff" stroke="none">
-                        <path d="M1 1823 l0 -178 20 62 c23 74 67 134 134 185 91 69 116 73 420 73 260 0 272 -1 328 -23 81 -33 166 -114 203 -194 l29 -63 3 -287 3 -288 -160 0 -159 0 -4 193 c-3 216 -10 242 -84 307 -51 44 -93 60 -161 60 -100 -1 -175 -46 -219 -132 l-24 -47 0 -493 c0 -476 1 -493 21 -534 74 -153 275 -186 396 -65 61 61 68 87 71 299 l4 192 159 0 160 0 -3 -293 -3 -292 -29 -60 c-38 -76 -105 -143 -181 -181 l-60 -29 -290 0 -290 0 -60 28 c-103 48 -190 151 -214 254 -6 27 -9 -13 -10 -139 l-1 -178 2500 0 2500 0 -1 553 c0 303 -4 541 -8 527 -14 -45 -39 -84 -73 -116 -60 -57 -92 -68 -215 -72 l-113 -4 0 -429 0 -429 -160 0 -160 0 0 429 0 429 -112 4 c-125 4 -168 19 -227 79 -68 67 -66 54 -69 489 l-3 396 23 33 c39 58 72 76 137 76 48 0 64 -5 96 -29 61 -47 65 -67 65 -319 0 -265 7 -302 74 -371 98 -100 254 -98 353 6 57 59 61 82 64 328 1 123 6 242 11 264 11 51 60 103 109 118 74 22 158 -15 189 -85 l20 -42 0 83 0 82 -2500 0 -2500 0 1 -177z m1639 -148 l0 -295 405 0 405 0 0 -135 0 -135 -405 0 -405 0 0 -302 c0 -341 2 -351 80 -422 130 -117 337 -62 396 106 10 29 14 89 14 219 l0 179 161 0 160 0 -3 -307 -3 -308 -28 -53 c-37 -70 -97 -128 -166 -161 l-56 -26 -315 0 -315 0 -49 25 c-77 39 -132 94 -168 168 l-33 67 -3 837 -3 838 166 0 165 0 0 -295z m1798 277 c118 -37 197 -116 234 -234 14 -46 18 -92 18 -199 l0 -139 -164 0 -164 0 -4 64 c-8 126 -98 216 -223 224 -78 5 -120 -8 -174 -54 -76 -65 -85 -96 -89 -281 l-4 -163 411 0 411 0 0 -140 0 -140 -410 0 -410 0 0 -430 0 -430 -160 0 -160 0 0 830 c0 812 0 830 21 884 24 66 96 149 153 178 84 43 110 47 388 47 232 1 274 -1 326 -17z"/>
-                    </g>
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a class="logo" href="/">
+                    <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200" preserveAspectRatio="xMidYMid meet">
+                        <g transform="translate(0.000000,200.000000) scale(0.100000,-0.100000)" fill="#ffffff" stroke="none">
+                            <path d="M1 1823 l0 -178 20 62 c23 74 67 134 134 185 91 69 116 73 420 73 260 0 272 -1 328 -23 81 -33 166 -114 203 -194 l29 -63 3 -287 3 -288 -160 0 -159 0 -4 193 c-3 216 -10 242 -84 307 -51 44 -93 60 -161 60 -100 -1 -175 -46 -219 -132 l-24 -47 0 -493 c0 -476 1 -493 21 -534 74 -153 275 -186 396 -65 61 61 68 87 71 299 l4 192 159 0 160 0 -3 -293 -3 -292 -29 -60 c-38 -76 -105 -143 -181 -181 l-60 -29 -290 0 -290 0 -60 28 c-103 48 -190 151 -214 254 -6 27 -9 -13 -10 -139 l-1 -178 2500 0 2500 0 -1 553 c0 303 -4 541 -8 527 -14 -45 -39 -84 -73 -116 -60 -57 -92 -68 -215 -72 l-113 -4 0 -429 0 -429 -160 0 -160 0 0 429 0 429 -112 4 c-125 4 -168 19 -227 79 -68 67 -66 54 -69 489 l-3 396 23 33 c39 58 72 76 137 76 48 0 64 -5 96 -29 61 -47 65 -67 65 -319 0 -265 7 -302 74 -371 98 -100 254 -98 353 6 57 59 61 82 64 328 1 123 6 242 11 264 11 51 60 103 109 118 74 22 158 -15 189 -85 l20 -42 0 83 0 82 -2500 0 -2500 0 1 -177z m1639 -148 l0 -295 405 0 405 0 0 -135 0 -135 -405 0 -405 0 0 -302 c0 -341 2 -351 80 -422 130 -117 337 -62 396 106 10 29 14 89 14 219 l0 179 161 0 160 0 -3 -307 -3 -308 -28 -53 c-37 -70 -97 -128 -166 -161 l-56 -26 -315 0 -315 0 -49 25 c-77 39 -132 94 -168 168 l-33 67 -3 837 -3 838 166 0 165 0 0 -295z m1798 277 c118 -37 197 -116 234 -234 14 -46 18 -92 18 -199 l0 -139 -164 0 -164 0 -4 64 c-8 126 -98 216 -223 224 -78 5 -120 -8 -174 -54 -76 -65 -85 -96 -89 -281 l-4 -163 411 0 411 0 0 -140 0 -140 -410 0 -410 0 0 -430 0 -430 -160 0 -160 0 0 830 c0 812 0 830 21 884 24 66 96 149 153 178 84 43 110 47 388 47 232 1 274 -1 326 -17z" />
+                        </g>
+                    </svg>
+                </a>
+                <div class="header-actions">
+                    <button id="themeToggle" class="icon-btn" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
+                    <button id="notifSettingBtn" class="icon-btn" aria-label="Notification settings" title="Notifikasi"><i class="far fa-bell"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== NOTIF POPUP ===== -->
+    <div class="notif-overlay" id="notifOverlay">
+        <div class="notif-popup">
+            <div class="notif-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                    <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                    <path d="M12 3v2" />
+                    <path d="M12 13v2" />
+                    <path d="M8 7l2 2" />
+                    <path d="M16 7l-2 2" />
                 </svg>
-            </a>
-            <div class="header-actions">
-                <button id="themeToggle" class="icon-btn" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
-                <button id="showFavOnlyBtn" class="icon-btn" aria-label="Show favorites"><i class="fas fa-heart"></i></button>
-                <button id="notifSettingBtn" class="icon-btn" aria-label="Notification settings" title="Notifikasi"><i class="fas fa-bell"></i></button>
+            </div>
+            <div class="notif-title">Jangan sampai ketinggalan asset baru!</div>
+            <div class="notif-desc">Aktifkan notifikasi untuk update template terbaru langsung ke browser kamu.</div>
+            <div class="notif-actions">
+                <button class="notif-btn notif-btn-primary" id="notifEnableBtn">
+                    <span id="notifBtnText">🔔 Aktifkan Notifikasi</span>
+                    <div class="notif-loader" id="notifLoader"></div>
+                </button>
+                <button class="notif-btn notif-btn-secondary" id="notifCloseBtn">✕ Nanti</button>
+            </div>
+            <div style="margin-top:12px;font-size:0.6rem;color:var(--text-secondary);">
+                <i class="fas fa-lock"></i> Kami tidak spam. Notifikasi hanya untuk update asset penting.
             </div>
         </div>
     </div>
-</header>
 
-<!-- Notification Popup -->
-<div class="notif-overlay" id="notifOverlay">
-    <div class="notif-popup">
-        <div class="notif-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
-                <path d="M13.73 21a2 2 0 0 1-3.46 0" />
-                <path d="M12 3v2" />
-                <path d="M12 13v2" />
-                <path d="M8 7l2 2" />
-                <path d="M16 7l-2 2" />
-            </svg>
-        </div>
-        <div class="notif-title">Jangan sampai ketinggalan asset baru!</div>
-        <div class="notif-desc">Aktifkan notifikasi untuk update template terbaru langsung ke browser kamu.</div>
-        <div class="notif-actions">
-            <button class="notif-btn notif-btn-primary" id="notifEnableBtn">
-                <span id="notifBtnText">🔔 Aktifkan Notifikasi</span>
-                <div class="notif-loader" id="notifLoader"></div>
-            </button>
-            <button class="notif-btn notif-btn-secondary" id="notifCloseBtn">
-                ✕ Nanti
-            </button>
-        </div>
-        <div style="margin-top:12px;font-size:0.65rem;color:var(--text-secondary);">
-            <i class="fas fa-lock"></i> Kami tidak spam. Notifikasi hanya untuk update asset penting.
-        </div>
-    </div>
-</div>
+    <!-- ===== MAIN ===== -->
+    <main>
+        <div class="container">
 
-<main>
-    <div class="container">
-        <div class="hero">
-            <h1>Template maupun Assets Alight Motion dari @ctfy</h1>
-            <p>Preset, Template &amp; Asset yang Dipakai Kreator Nyata — Temukan preset atau asset yang kau cari</p>
-        </div>
-        
-        <div class="search-panel">
-            <i class="fas fa-search search-icon"></i>
-            <input type="text" id="searchInput" class="search-input" placeholder="Cari preset, template, atau asset...">
-            <div class="filter-divider"></div>
-            <div class="chips-wrapper" id="quickFilters">
-                <button class="chip active" data-filter="all">Semua</button>
-                <button class="chip" data-filter="free">Gratis</button>
-                <button class="chip" data-filter="pro">Pro</button>
-                <button class="chip" data-filter="paid">Paid</button>
-                <button class="chip" data-filter="new">Baru</button>
-                <button class="chip" data-filter="coming">Coming Soon</button>
-                <button class="chip fav-chip" id="favFilterChip"><i class="far fa-star"></i> Favorit</button>
+            <!-- HERO -->
+            <div class="hero">
+                <h1>Template maupun Assets Alight Motion dari @ctfy</h1>
+                <p>Preset, Template &amp; Asset yang Dipakai Kreator Nyata</p>
             </div>
-        </div>
-        
-        <div class="stats-bar">
-            <div class="stat-item"><i class="fas fa-layer-group"></i> <span class="num" id="statTotal">0</span> total asset</div>
-            <div class="stat-item"><i class="fas fa-search"></i> <span class="num" id="statFiltered">0</span> hasil filter</div>
-            <div class="stat-item"><i class="fas fa-tag"></i> <span class="num" id="statCategories">0</span> kategori</div>
-            <div class="stat-item"><i class="fas fa-download"></i> <span class="num" id="statDownloads">0</span> total downloads <span class="sync-status" id="syncStatus">● connecting...</span></div>
-            <div class="stat-item" id="notifStatusItem" style="display:none;"><span class="sync-status online" id="notifStatus"></span></div>
-        </div>
-        
-        <div class="featured-section" id="featuredSection">
-            <div class="featured-grid">
-                <div class="featured-column">
-                    <div class="featured-column-header">
-                        <div class="featured-column-title"><i class="fas fa-sparkles"></i> Terbaru</div>
-                        <span class="featured-column-link" id="refreshNewest"><i class="fas fa-sync-alt"></i></span>
-                    </div>
-                    <div class="featured-list" id="newestList"></div>
-                </div>
-                <div class="featured-column">
-                    <div class="featured-column-header">
-                        <div class="featured-column-title"><i class="fas fa-fire"></i> Terpopuler</div>
-                        <span class="featured-column-link" id="refreshPopular"><i class="fas fa-sync-alt"></i></span>
-                    </div>
-                    <div class="featured-list" id="popularList"></div>
+
+            <!-- SEARCH & FILTERS -->
+            <div class="search-panel">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="searchInput" class="search-input" placeholder="Cari preset, template, atau asset...">
+                <div class="filter-divider"></div>
+                <div class="chips-wrapper" id="quickFilters">
+                    <button class="chip active" data-filter="all">Semua</button>
+                    <button class="chip" data-filter="free">Gratis</button>
+                    <button class="chip" data-filter="pro">Pro</button>
+                    <button class="chip" data-filter="paid">Berbayar</button>
+                    <button class="chip" data-filter="new">Baru</button>
+                    <button class="chip" data-filter="coming">Coming Soon</button>
+                    <button class="chip fav-chip" id="favFilterChip"><i class="far fa-star"></i> Favorit</button>
                 </div>
             </div>
-        </div>
-        
-        <div class="section-header">
-            <div class="section-title"><i class="fas fa-grid-2"></i> Semua Asset</div>
-            <span class="section-link" id="resetFiltersBtn">Reset filter</span>
-        </div>
-        <div id="cardGrid" class="grid"></div>
-    </div>
-</main>
 
-<footer class="footer">
-    <div class="footer-brand">CTFY</div>
-    <div class="footer-tagline">Preset • Template • Asset — by @imctfy</div>
-    <div class="footer-social">
-        <a href="https://tiktok.com/@imctfy" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-        <a href="https://instagram.com/imctfy" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://youtube.com/@imctfy" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-    </div>
-    <div class="footer-links">
-        <a href="/sitemap.xml">Sitemap</a>
-        <a href="/robots.txt">Robots</a>
-        <a href="mailto:myxrin2748@gmail.com">Kontak</a>
-    </div>
-    <div class="footer-copy">&copy; 2026 CTFY by @imctfy</div>
-</footer>
+            <!-- STATS -->
+            <div class="stats-bar">
+                <div class="stat-item"><i class="fas fa-layer-group"></i> <span class="num" id="statTotal">0</span> total</div>
+                <div class="stat-item"><i class="fas fa-search"></i> <span class="num" id="statFiltered">0</span> hasil</div>
+                <div class="stat-item"><i class="fas fa-tag"></i> <span class="num" id="statCategories">0</span> kategori</div>
+                <div class="stat-item"><i class="fas fa-download"></i> <span class="num" id="statDownloads">0</span> total downloads <span class="sync-status" id="syncStatus">● connecting...</span></div>
+                <div class="stat-item" id="notifStatusItem" style="display:none;"><span class="sync-status online" id="notifStatus"></span></div>
+            </div>
 
-<div id="modal" class="modal">
-    <div class="modal-content">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-            <h3 id="modalTitle" style="font-size: 1.2rem; font-weight: 600;"></h3>
-            <button onclick="closeModal()" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text);">&times;</button>
+            <!-- ===== TAB 1: BERANDA ===== -->
+            <div class="tab-page active" id="tabBeranda">
+
+                <!-- Featured: Terbaru & Terpopuler -->
+                <div class="featured-section">
+                    <div class="featured-grid">
+                        <div class="featured-column">
+                            <div class="featured-column-header">
+                                <div class="featured-column-title"><i class="fas fa-sparkles"></i> Terbaru</div>
+                                <span class="featured-column-link" id="refreshNewest"><i class="fas fa-sync-alt"></i></span>
+                            </div>
+                            <div class="featured-list" id="newestList"></div>
+                        </div>
+                        <div class="featured-column">
+                            <div class="featured-column-header">
+                                <div class="featured-column-title"><i class="fas fa-fire"></i> Terpopuler</div>
+                                <span class="featured-column-link" id="refreshPopular"><i class="fas fa-sync-alt"></i></span>
+                            </div>
+                            <div class="featured-list" id="popularList"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Asset Berbayar -->
+                <div class="paid-section">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--spacing-sm);">
+                        <h3 style="font-size:1rem;font-weight:600;"><i class="fas fa-crown" style="color:var(--warning);"></i> Asset Berbayar</h3>
+                        <span style="font-size:0.7rem;color:var(--text-secondary);">Klik untuk detail</span>
+                    </div>
+                    <div class="paid-grid" id="paidGrid"></div>
+                </div>
+            </div>
+
+            <!-- ===== TAB 2: SEMUA ASSET ===== -->
+            <div class="tab-page" id="tabSemua">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--spacing-sm);">
+                    <h3 style="font-size:1rem;font-weight:600;"><i class="fas fa-grid-2"></i> Semua Asset</h3>
+                    <span class="section-link" id="resetFiltersBtn" style="font-size:0.75rem;color:var(--text-secondary);cursor:pointer;">Reset filter</span>
+                </div>
+                <div id="cardGrid" class="grid"></div>
+            </div>
+
         </div>
-        <div class="modal-code" id="modalCode"></div>
-        <div id="modalTags" style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px;"></div>
-        <div id="modalDetails"></div>
-        <div id="modalLinks" class="modal-links"></div>
-        <div class="share-buttons">
-            <button class="share-btn" onclick="copyAssetLink()"><i class="fas fa-copy"></i> Salin link</button>
-            <button class="share-btn" onclick="shareAsset()"><i class="fas fa-share-alt"></i> Bagikan</button>
+    </main>
+
+    <!-- ===== BOTTOM NAV ===== -->
+    <nav class="bottom-nav" id="bottomNav">
+        <button class="nav-item active" data-tab="beranda" aria-label="Beranda">
+            <i class="fas fa-home"></i>
+            <span>Beranda</span>
+        </button>
+        <button class="nav-item" data-tab="semua" aria-label="Semua Asset">
+            <i class="fas fa-th-large"></i>
+            <span>Semua Asset</span>
+            <span class="nav-badge" id="navBadge">0</span>
+        </button>
+    </nav>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-brand">CTFY</div>
+        <div class="footer-tagline">Preset • Template • Asset — by @imctfy</div>
+        <div class="footer-social">
+            <a href="https://tiktok.com/@imctfy" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://instagram.com/imctfy" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com/@imctfy" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="footer-links">
+            <a href="/sitemap.xml">Sitemap</a>
+            <a href="/robots.txt">Robots</a>
+            <a href="mailto:myxrin2748@gmail.com">Kontak</a>
+        </div>
+        <div class="footer-copy">&copy; 2026 CTFY by @imctfy</div>
+    </footer>
+
+    <!-- ===== MODAL ===== -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+                <h3 id="modalTitle" style="font-size:1.1rem;font-weight:600;"></h3>
+                <button onclick="closeModal()" style="background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text);">&times;</button>
+            </div>
+            <div class="modal-code" id="modalCode"></div>
+            <div id="modalTags" style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px;"></div>
+            <div id="modalDetails"></div>
+            <div id="modalLinks" class="modal-links"></div>
+            <div class="share-buttons">
+                <button class="share-btn" onclick="copyAssetLink()"><i class="fas fa-copy"></i> Salin link</button>
+                <button class="share-btn" onclick="shareAsset()"><i class="fas fa-share-alt"></i> Bagikan</button>
+            </div>
         </div>
     </div>
-</div>
 
-<script>
-    // ============ CONFIG ============
-    const firebaseConfig = {
-        apiKey: "AIzaSyATWmme05sKVI2qCPWvdVP5NFHIQ64eJ-o",
-        authDomain: "pusat-link-cattfly.firebaseapp.com",
-        databaseURL: "https://pusat-link-cattfly-default-rtdb.firebaseio.com",
-        projectId: "pusat-link-cattfly",
-        storageBucket: "pusat-link-cattfly.firebasestorage.app",
-        messagingSenderId: "37808781852",
-        appId: "1:37808781852:web:35e5b9d4f1776065bdbdd9",
-        measurementId: "G-15SJYB7TNN"
-    };
-    
-    const VAPID_KEY = "BMLcOdjW6SrJEEZirGuGTXYKI8o36q7sGdQ3oc9DrKWuEwG0YKc1Ggg266meAB4-SHw-lF8y-pI02BJHk7t4W0I";
-    const WA_NUMBER = '6285745535579';
-    const ORDER_EMAIL = 'myxrin2748@gmail.com';
-    const API_URL = 'https://script.google.com/macros/s/AKfycbxGBXI-W9rj6PzpeoSf_84HBq4CQnXwD9CoynIoRIfD9RWWyfArU7qf9R8yl4DTOchs/exec';
-    const CACHE_KEY = 'ctfy_v90_data';
-    const FAVORITES_KEY = 'ctfy_favorites';
-    const DOWNLOADS_KEY = 'ctfy_downloads';
-    const NOTIF_PROMPT_KEY = 'ctfy_notif_prompt_seen';
-    const NOTIF_ENABLED_KEY = 'ctfy_notif_enabled';
-    const FCM_TOKEN_KEY = 'ctfy_fcm_token';
-    
-    const APPS_SCRIPT_SUBSCRIBE_URL = 'https://script.google.com/macros/s/YOUR_APPS_SCRIPT_ID/exec';
-    
-    // ============ GLOBAL STATE ============
-    let db = null;
-    let messaging = null;
-    let firebaseInitialized = false;
-    let fcmSupported = false;
-    let downloadSession = new Set();
-    let isOffline = false;
-    let isLoading = false;
-    let allItems = [], favorites = new Set(), currentItem = null;
-    let currentFilter = 'all';
-    let fuseInstance = null;
-    let searchTimer = null;
-    let notifEnabled = false;
-    let fcmToken = null;
-    
-    // ============ FIREBASE INIT ============
-    try {
-        firebase.initializeApp(firebaseConfig);
-        db = firebase.firestore();
-        firebaseInitialized = true;
-        updateSyncStatus('● live', 'online');
-        
+    <script>
+        // ============ CONFIG ============
+        const firebaseConfig = {
+            apiKey: "AIzaSyATWmme05sKVI2qCPWvdVP5NFHIQ64eJ-o",
+            authDomain: "pusat-link-cattfly.firebaseapp.com",
+            databaseURL: "https://pusat-link-cattfly-default-rtdb.firebaseio.com",
+            projectId: "pusat-link-cattfly",
+            storageBucket: "pusat-link-cattfly.firebasestorage.app",
+            messagingSenderId: "37808781852",
+            appId: "1:37808781852:web:35e5b9d4f1776065bdbdd9",
+            measurementId: "G-15SJYB7TNN"
+        };
+
+        const VAPID_KEY = "BMLcOdjW6SrJEEZirGuGTXYKI8o36q7sGdQ3oc9DrKWuEwG0YKc1Ggg266meAB4-SHw-lF8y-pI02BJHk7t4W0I";
+        const WA_NUMBER = '6285745535579';
+        const ORDER_EMAIL = 'myxrin2748@gmail.com';
+        const API_URL = 'https://script.google.com/macros/s/AKfycbxGBXI-W9rj6PzpeoSf_84HBq4CQnXwD9CoynIoRIfD9RWWyfArU7qf9R8yl4DTOchs/exec';
+        const CACHE_KEY = 'ctfy_v90_data';
+        const FAVORITES_KEY = 'ctfy_favorites';
+        const DOWNLOADS_KEY = 'ctfy_downloads';
+        const NOTIF_PROMPT_KEY = 'ctfy_notif_prompt_seen';
+        const NOTIF_ENABLED_KEY = 'ctfy_notif_enabled';
+        const FCM_TOKEN_KEY = 'ctfy_fcm_token';
+
+        // ============ GLOBAL STATE ============
+        let db = null;
+        let messaging = null;
+        let firebaseInitialized = false;
+        let fcmSupported = false;
+        let downloadSession = new Set();
+        let isOffline = false;
+        let isLoading = false;
+        let allItems = [],
+            favorites = new Set(),
+            currentItem = null;
+        let currentFilter = 'all';
+        let fuseInstance = null;
+        let searchTimer = null;
+        let notifEnabled = false;
+        let fcmToken = null;
+        let currentTab = 'beranda';
+
+        // ============ FIREBASE INIT ============
         try {
-            messaging = firebase.messaging();
-            fcmSupported = true;
-            console.log('[FCM] Messaging initialized');
-        } catch(e) {
-            console.warn('[FCM] Messaging not supported:', e.message);
-            fcmSupported = false;
-        }
-    } catch(e) {
-        console.error('Firebase init error:', e);
-        updateSyncStatus('● local', 'local');
-        isOffline = true;
-    }
-    
-    // ============ HELPER FUNCTIONS ============
-    function updateSyncStatus(text, type = 'online') {
-        const el = document.getElementById('syncStatus');
-        if(el) { el.textContent = text; el.className = 'sync-status ' + type; }
-    }
-    
-    function escapeHTML(str) { if(!str) return ''; return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
-    
-    // ** PERUBAHAN UTAMA: Fungsi untuk menentukan status harga berdasarkan kolom Harga **
-    function getItemPrice(item) {
-        const harga = (item.Harga || '').toString().trim();
-        if (!harga) return 'free';          // kosong → gratis
-        // Jika berisi angka atau teks (misal "Rp 50.000") → dianggap paid
-        return 'paid';
-    }
-    
-    function getItemType(item) {
-        if (isComingSoon(item)) return 'coming';
-        const price = getItemPrice(item);
-        if (price === 'paid') return 'paid';
-        // Cek pro: jika ada kata 'pro' di kategori atau nama
-        const kategori = (item.Kategori || '').toLowerCase();
-        const nama = (item.Nama || '').toLowerCase();
-        if (kategori.includes('pro') || nama.includes('pro')) return 'pro';
-        return 'free';
-    }
-    
-    // Fungsi untuk menampilkan label harga di badge
-    function getPriceLabel(item) {
-        const harga = (item.Harga || '').toString().trim();
-        if (!harga) return 'Gratis';
-        return harga; // tampilkan harga asli dari sheet
-    }
-    
-    function isPaidItem(item) {
-        return getItemPrice(item) === 'paid';
-    }
-    
-    function isProItem(item) {
-        return getItemType(item) === 'pro';
-    }
-    
-    function isComingSoon(item) { 
-        const tgl = (item.Tanggal || '').toString().toLowerCase().trim(); 
-        return tgl === 'comingsoon' || tgl === 'coming soon' || tgl === 'coming_soon'; 
-    }
-    
-    function isNewItem(dateStr) { if(!dateStr) return false; if(isComingSoon({Tanggal: dateStr})) return false; try { let d = new Date(dateStr); if(isNaN(d.getTime())) return false; const weekAgo = new Date(); weekAgo.setDate(weekAgo.getDate() - 7); return d > weekAgo; } catch(e) { return false; } }
-    function getDownloads(id) { let d = JSON.parse(localStorage.getItem(DOWNLOADS_KEY) || '{}'); return d[id] || 0; }
-    function showToast(msg) { const t = document.querySelector('.toast'); if(t) t.remove(); const toast = document.createElement('div'); toast.className = 'toast'; toast.innerHTML = msg; document.body.appendChild(toast); setTimeout(() => toast.remove(), 2500); }
-    function formatDate(dateStr) { if(!dateStr) return '-'; if(isComingSoon({Tanggal: dateStr})) return 'Coming Soon'; try { let d = new Date(dateStr); if(isNaN(d.getTime())) return dateStr; return d.toLocaleDateString('id', { day: 'numeric', month: 'short', year: 'numeric' }); } catch(e) { return dateStr; } }
-    function getTrending(id) { return getDownloads(id) > 50; }
-    function copyCode(code) { navigator.clipboard.writeText(code).then(() => showToast('📋 Kode ' + code + ' disalin!')); }
-    
-    const TAG_MAP = { 'Motion Graphic': ['motion', 'animation', 'after effects'], 'Template': ['template', 'premiere pro'], 'Sound Effect': ['sfx', 'audio'], 'Transition': ['transition', 'glitch', 'cinematic'], 'Logo': ['logo', 'reveal', 'intro'] };
-    function getTags(item) { let tags = []; const kategori = item.Kategori || ''; const nama = (item.Nama || '').toLowerCase(); for(let [cat, catTags] of Object.entries(TAG_MAP)) { if(kategori.includes(cat) || nama.includes(cat.toLowerCase())) tags.push(...catTags); } if(nama.includes('gaming')) tags.push('gaming'); if(nama.includes('velocity')) tags.push('velocity'); return [...new Set(tags)].slice(0, 4); }
-    
-    // ============ FIRESTORE DOWNLOADS ============
-    async function incrementDownloadFirebase(id) {
-        if(!firebaseInitialized || !db || isOffline) return false;
-        try {
-            await db.collection("downloads")
-            .doc(id)
-            .set({
-                count: firebase.firestore.FieldValue.increment(1)
-            }, {
-                merge: true
-            });
-            return true;
-        } catch(err) {
-            console.error(err);
-            return false;
-        }
-    }
-    
-    async function loadFirebaseDownloads() {
-        if(!firebaseInitialized || !db || isOffline) return;
-        try {
-            const snapshot = await db.collection("downloads").get();
-            let downloads = {};
-            snapshot.forEach(doc => {
-                downloads[doc.id] = doc.data().count || 0;
-            });
-            localStorage.setItem(DOWNLOADS_KEY, JSON.stringify(downloads));
+            firebase.initializeApp(firebaseConfig);
+            db = firebase.firestore();
+            firebaseInitialized = true;
             updateSyncStatus('● live', 'online');
-        } catch(err) {
-            console.error(err);
-            updateSyncStatus('● offline', 'offline');
-        }
-    }
-    
-    // ============ FCM NOTIFICATIONS ============
-    async function getFCMToken() {
-        if (!fcmSupported || !messaging) {
-            console.warn('[FCM] Messaging not supported');
-            return null;
-        }
-        
-        if (!VAPID_KEY || VAPID_KEY === 'ISI_VAPID_KEY_DISINI') {
-            console.warn('[FCM] VAPID Key belum diisi');
-            return null;
-        }
-        
-        try {
-            const registration = await navigator.serviceWorker.register('./firebase-messaging-sw.js');
-            console.log('[FCM] Service Worker registered:', registration.scope);
-            
-            const currentToken = await messaging.getToken({
-                vapidKey: VAPID_KEY,
-                serviceWorkerRegistration: registration
-            });
-            
-            if (currentToken) {
-                console.log('[FCM] Token obtained:', currentToken.substring(0, 20) + '...');
-                return currentToken;
-            } else {
-                console.warn('[FCM] No registration token available');
-                return null;
+            try {
+                messaging = firebase.messaging();
+                fcmSupported = true;
+                console.log('[FCM] Messaging initialized');
+            } catch (e) {
+                console.warn('[FCM] Messaging not supported:', e.message);
+                fcmSupported = false;
             }
-        } catch(err) {
-            console.error('[FCM] Error getting token:', err);
-            return null;
+        } catch (e) {
+            console.error('Firebase init error:', e);
+            updateSyncStatus('● local', 'local');
+            isOffline = true;
         }
-    }
-    
-    async function saveFCMTokenToFirestore(token) {
-        if (!firebaseInitialized || !db || !token) return false;
-        
-        try {
-            await db.collection("fcm_tokens").doc(token).set({
-                token: token,
-                createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-                userAgent: navigator.userAgent.substring(0, 200),
-                platform: navigator.platform || 'unknown'
-            });
-            console.log('[FCM] Token saved to Firestore');
-            return true;
-        } catch(err) {
-            console.error('[FCM] Error saving token:', err);
-            return false;
+
+        // ============ HELPER FUNCTIONS ============
+        function updateSyncStatus(text, type = 'online') {
+            const el = document.getElementById('syncStatus');
+            if (el) { el.textContent = text;
+                el.className = 'sync-status ' + type; }
         }
-    }
-    
-    async function deleteFCMToken() {
-        if (!fcmSupported || !messaging || !fcmToken) return;
-        
-        try {
-            await messaging.deleteToken({ vapidKey: VAPID_KEY });
-            if (firebaseInitialized && db) {
-                await db.collection("fcm_tokens").doc(fcmToken).delete();
+
+        function escapeHTML(str) { if (!str) return ''; return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;'); }
+
+        function getItemPrice(item) {
+            const harga = (item.Harga || '').toString().trim();
+            if (!harga) return 'free';
+            return 'paid';
+        }
+
+        function getItemType(item) {
+            if (isComingSoon(item)) return 'coming';
+            const price = getItemPrice(item);
+            if (price === 'paid') return 'paid';
+            const kategori = (item.Kategori || '').toLowerCase();
+            const nama = (item.Nama || '').toLowerCase();
+            if (kategori.includes('pro') || nama.includes('pro')) return 'pro';
+            return 'free';
+        }
+
+        function getPriceLabel(item) {
+            const harga = (item.Harga || '').toString().trim();
+            if (!harga) return 'Gratis';
+            return harga;
+        }
+
+        function isPaidItem(item) { return getItemPrice(item) === 'paid'; }
+
+        function isProItem(item) { return getItemType(item) === 'pro'; }
+
+        function isComingSoon(item) {
+            const tgl = (item.Tanggal || '').toString().toLowerCase().trim();
+            return tgl === 'comingsoon' || tgl === 'coming soon' || tgl === 'coming_soon';
+        }
+
+        function isNewItem(dateStr) {
+            if (!dateStr) return false;
+            if (isComingSoon({ Tanggal: dateStr })) return false;
+            try {
+                let d = new Date(dateStr);
+                if (isNaN(d.getTime())) return false;
+                const weekAgo = new Date();
+                weekAgo.setDate(weekAgo.getDate() - 7);
+                return d > weekAgo;
+            } catch (e) { return false; }
+        }
+
+        function getDownloads(id) {
+            let d = JSON.parse(localStorage.getItem(DOWNLOADS_KEY) || '{}');
+            return d[id] || 0;
+        }
+
+        function showToast(msg) {
+            const t = document.querySelector('.toast');
+            if (t) t.remove();
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.innerHTML = msg;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 2500);
+        }
+
+        function formatDate(dateStr) {
+            if (!dateStr) return '-';
+            if (isComingSoon({ Tanggal: dateStr })) return 'Coming Soon';
+            try {
+                let d = new Date(dateStr);
+                if (isNaN(d.getTime())) return dateStr;
+                return d.toLocaleDateString('id', { day: 'numeric', month: 'short', year: 'numeric' });
+            } catch (e) { return dateStr; }
+        }
+
+        function getTrending(id) { return getDownloads(id) > 50; }
+
+        function copyCode(code) {
+            navigator.clipboard.writeText(code).then(() => showToast('📋 Kode ' + code + ' disalin!'));
+        }
+
+        const TAG_MAP = {
+            'Motion Graphic': ['motion', 'animation', 'after effects'],
+            'Template': ['template', 'premiere pro'],
+            'Sound Effect': ['sfx', 'audio'],
+            'Transition': ['transition', 'glitch', 'cinematic'],
+            'Logo': ['logo', 'reveal', 'intro']
+        };
+
+        function getTags(item) {
+            let tags = [];
+            const kategori = item.Kategori || '';
+            const nama = (item.Nama || '').toLowerCase();
+            for (let [cat, catTags] of Object.entries(TAG_MAP)) {
+                if (kategori.includes(cat) || nama.includes(cat.toLowerCase())) tags.push(...catTags);
             }
-            console.log('[FCM] Token deleted');
-        } catch(err) {
-            console.error('[FCM] Error deleting token:', err);
+            if (nama.includes('gaming')) tags.push('gaming');
+            if (nama.includes('velocity')) tags.push('velocity');
+            return [...new Set(tags)].slice(0, 4);
         }
-    }
-    
-    async function autoSubscribeToTopic(token) {
-        if (!token) {
-            console.warn('[Subscribe] Token tidak ada, skip subscribe.');
-            return;
+
+        // ============ FIRESTORE DOWNLOADS ============
+        async function incrementDownloadFirebase(id) {
+            if (!firebaseInitialized || !db || isOffline) return false;
+            try {
+                await db.collection("downloads")
+                    .doc(id)
+                    .set({ count: firebase.firestore.FieldValue.increment(1) }, { merge: true });
+                return true;
+            } catch (err) { console.error(err); return false; }
         }
-        
-        if (!APPS_SCRIPT_SUBSCRIBE_URL || APPS_SCRIPT_SUBSCRIBE_URL.includes('YOUR_APPS_SCRIPT_ID')) {
-            console.warn('[Subscribe] URL Apps Script belum diset, skip subscribe.');
-            return;
+
+        async function loadFirebaseDownloads() {
+            if (!firebaseInitialized || !db || isOffline) return;
+            try {
+                const snapshot = await db.collection("downloads").get();
+                let downloads = {};
+                snapshot.forEach(doc => { downloads[doc.id] = doc.data().count || 0; });
+                localStorage.setItem(DOWNLOADS_KEY, JSON.stringify(downloads));
+                updateSyncStatus('● live', 'online');
+            } catch (err) {
+                console.error(err);
+                updateSyncStatus('● offline', 'offline');
+            }
         }
-        
-        try {
-            console.log('[Subscribe] Mengirim token ke Apps Script untuk subscribe topic "promo"...');
-            const response = await fetch(APPS_SCRIPT_SUBSCRIBE_URL, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    token: token,
-                    topic: 'promo'
-                })
-            });
-            
-            const result = await response.text();
-            console.log('[Subscribe] Response Apps Script:', result);
-            showToast('✅ Berlangganan notifikasi asset baru!');
-        } catch(err) {
-            console.error('[Subscribe] Gagal subscribe:', err);
-        }
-    }
-    
-    function onMessageListener() {
-        if (!fcmSupported || !messaging) return;
-        
-        messaging.onMessage((payload) => {
-            console.log('[FCM] Foreground message:', payload);
-            
-            const title = payload.notification?.title || 'CTFY Update';
-            const body = payload.notification?.body || 'Ada asset baru untuk kamu!';
-            
-            if (typeof Notification !== 'undefined' && Notification.permission === 'granted') {
-                new Notification(title, {
-                    body: body,
-                    icon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🔥</text></svg>',
-                    tag: 'ctfy-update',
-                    data: payload.data || {}
+
+        // ============ FCM (diringkas) ============
+        async function getFCMToken() {
+            if (!fcmSupported || !messaging) return null;
+            try {
+                const registration = await navigator.serviceWorker.register('./firebase-messaging-sw.js');
+                const currentToken = await messaging.getToken({
+                    vapidKey: VAPID_KEY,
+                    serviceWorkerRegistration: registration
                 });
-            }
-            
-            showToast(`🔔 ${title}: ${body}`);
-        });
-    }
-    
-    async function enableFCMNotifications() {
-        const enableBtn = document.getElementById('notifEnableBtn');
-        const btnText = document.getElementById('notifBtnText');
-        const loader = document.getElementById('notifLoader');
-        
-        if (enableBtn) enableBtn.disabled = true;
-        if (btnText) btnText.style.display = 'none';
-        if (loader) loader.style.display = 'block';
-        
-        try {
-            if (typeof Notification === 'undefined') {
-                throw new Error('Browser tidak mendukung notifikasi');
-            }
-            const permission = await Notification.requestPermission();
-            
-            if (permission !== 'granted') {
-                notifEnabled = false;
-                localStorage.setItem(NOTIF_ENABLED_KEY, 'false');
-                localStorage.setItem(NOTIF_PROMPT_KEY, 'true');
-                updateNotifUI();
-                hideNotifPopup();
-                showToast('⚠️ Notifikasi browser ditolak. Kamu bisa mengaktifkannya nanti.');
-                return;
-            }
-            
-            fcmToken = await getFCMToken();
-            
-            if (!fcmToken) {
+                return currentToken || null;
+            } catch (err) { console.error(err); return null; }
+        }
+
+        async function saveFCMTokenToFirestore(token) {
+            if (!firebaseInitialized || !db || !token) return false;
+            try {
+                await db.collection("fcm_tokens").doc(token).set({
+                    token: token,
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+                    userAgent: navigator.userAgent.substring(0, 200),
+                    platform: navigator.platform || 'unknown'
+                });
+                return true;
+            } catch (err) { console.error(err); return false; }
+        }
+
+        async function deleteFCMToken() {
+            if (!fcmSupported || !messaging || !fcmToken) return;
+            try {
+                await messaging.deleteToken({ vapidKey: VAPID_KEY });
+                if (firebaseInitialized && db) await db.collection("fcm_tokens").doc(fcmToken).delete();
+            } catch (err) { console.error(err); }
+        }
+
+        async function enableFCMNotifications() {
+            const enableBtn = document.getElementById('notifEnableBtn');
+            const btnText = document.getElementById('notifBtnText');
+            const loader = document.getElementById('notifLoader');
+            if (enableBtn) enableBtn.disabled = true;
+            if (btnText) btnText.style.display = 'none';
+            if (loader) loader.style.display = 'block';
+            try {
+                if (typeof Notification === 'undefined') throw new Error('Browser tidak mendukung notifikasi');
+                const permission = await Notification.requestPermission();
+                if (permission !== 'granted') {
+                    notifEnabled = false;
+                    localStorage.setItem(NOTIF_ENABLED_KEY, 'false');
+                    localStorage.setItem(NOTIF_PROMPT_KEY, 'true');
+                    updateNotifUI();
+                    hideNotifPopup();
+                    showToast('⚠️ Notifikasi browser ditolak.');
+                    return;
+                }
+                fcmToken = await getFCMToken();
+                if (!fcmToken) {
+                    notifEnabled = true;
+                    localStorage.setItem(NOTIF_ENABLED_KEY, 'true');
+                    localStorage.setItem(NOTIF_PROMPT_KEY, 'true');
+                    localStorage.removeItem(FCM_TOKEN_KEY);
+                    updateNotifUI();
+                    hideNotifPopup();
+                    showToast('🔔 Notifikasi dasar diaktifkan!');
+                    return;
+                }
+                localStorage.setItem(FCM_TOKEN_KEY, fcmToken);
+                await saveFCMTokenToFirestore(fcmToken);
                 notifEnabled = true;
                 localStorage.setItem(NOTIF_ENABLED_KEY, 'true');
                 localStorage.setItem(NOTIF_PROMPT_KEY, 'true');
-                localStorage.removeItem(FCM_TOKEN_KEY);
                 updateNotifUI();
                 hideNotifPopup();
-                showToast('🔔 Notifikasi dasar diaktifkan! (FCM memerlukan HTTPS)');
-                
-                if (typeof Notification !== 'undefined') {
-                    new Notification('CTFY', {
-                        body: '🔥 Kamu akan dapat info asset terbaru!',
-                        icon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🔥</text></svg>',
-                        tag: 'ctfy-welcome'
-                    });
+                showToast('🔔 Notifikasi FCM diaktifkan!');
+            } catch (err) {
+                console.error(err);
+                notifEnabled = false;
+                localStorage.setItem(NOTIF_ENABLED_KEY, 'false');
+                localStorage.setItem(NOTIF_PROMPT_KEY, 'true');
+                updateNotifUI();
+                hideNotifPopup();
+                showToast('❌ Gagal mengaktifkan notifikasi.');
+            } finally {
+                if (enableBtn) enableBtn.disabled = false;
+                if (btnText) btnText.style.display = '';
+                if (loader) loader.style.display = 'none';
+            }
+        }
+
+        // ============ NOTIF UI ============
+        function initNotif() {
+            notifEnabled = localStorage.getItem(NOTIF_ENABLED_KEY) === 'true';
+            fcmToken = localStorage.getItem(FCM_TOKEN_KEY) || null;
+            updateNotifUI();
+            if (notifEnabled && fcmToken) {
+                // auto subscribe jika perlu
+            }
+            if (notifEnabled) {
+                if (typeof Notification !== 'undefined' && Notification.permission !== 'granted') {
+                    notifEnabled = false;
+                    localStorage.setItem(NOTIF_ENABLED_KEY, 'false');
+                    localStorage.removeItem(FCM_TOKEN_KEY);
+                    updateNotifUI();
                 }
                 return;
             }
-            
-            localStorage.setItem(FCM_TOKEN_KEY, fcmToken);
-            await saveFCMTokenToFirestore(fcmToken);
-            await autoSubscribeToTopic(fcmToken);
-            
-            notifEnabled = true;
-            localStorage.setItem(NOTIF_ENABLED_KEY, 'true');
+            const prompted = localStorage.getItem(NOTIF_PROMPT_KEY) === 'true';
+            if (prompted) return;
+            setTimeout(showNotifPopup, 3000);
+        }
+
+        function showNotifPopup() {
+            if (notifEnabled) return;
+            if (typeof Notification === 'undefined') return;
+            if (Notification.permission === 'granted') { enableFCMNotifications(); return; }
+            if (Notification.permission === 'denied') { localStorage.setItem(NOTIF_PROMPT_KEY, 'true'); return; }
+            document.getElementById('notifOverlay').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function hideNotifPopup() {
+            document.getElementById('notifOverlay').style.display = 'none';
+            document.body.style.overflow = '';
             localStorage.setItem(NOTIF_PROMPT_KEY, 'true');
-            updateNotifUI();
-            hideNotifPopup();
-            showToast('🔔 Notifikasi FCM diaktifkan!');
-            
-            if (typeof Notification !== 'undefined') {
-                new Notification('CTFY', {
-                    body: '🔥 Kamu akan dapat info asset terbaru via push notification!',
-                    icon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🔥</text></svg>',
-                    tag: 'ctfy-welcome'
-                });
+        }
+
+        function updateNotifUI() {
+            const btn = document.getElementById('notifSettingBtn');
+            const icon = btn?.querySelector('i');
+            const statusItem = document.getElementById('notifStatusItem');
+            const statusEl = document.getElementById('notifStatus');
+            if (notifEnabled) {
+                if (icon) icon.className = 'fas fa-bell';
+                if (btn) btn.style.color = 'var(--primary)';
+                if (statusItem) statusItem.style.display = 'flex';
+                if (statusEl) { statusEl.textContent = fcmToken ? '🔔 FCM aktif' : '🔔 Notifikasi aktif';
+                    statusEl.className = 'sync-status online'; }
+            } else {
+                if (icon) icon.className = 'far fa-bell';
+                if (btn) btn.style.color = 'var(--text-secondary)';
+                if (statusItem) statusItem.style.display = 'none';
             }
-            
-        } catch(err) {
-            console.error('[FCM] Enable error:', err);
-            notifEnabled = false;
-            localStorage.setItem(NOTIF_ENABLED_KEY, 'false');
-            localStorage.setItem(NOTIF_PROMPT_KEY, 'true');
-            updateNotifUI();
-            hideNotifPopup();
-            showToast('❌ Gagal mengaktifkan notifikasi. Coba lagi nanti.');
-        } finally {
-            if (enableBtn) enableBtn.disabled = false;
-            if (btnText) btnText.style.display = '';
-            if (loader) loader.style.display = 'none';
         }
-    }
-    
-    // ============ NOTIFICATION UI ============
-    function initNotif() {
-        notifEnabled = localStorage.getItem(NOTIF_ENABLED_KEY) === 'true';
-        fcmToken = localStorage.getItem(FCM_TOKEN_KEY) || null;
-        updateNotifUI();
-        
-        if (notifEnabled && fcmToken) {
-            autoSubscribeToTopic(fcmToken);
-        }
-        
-        if (notifEnabled) {
-            if (typeof Notification !== 'undefined' && Notification.permission !== 'granted') {
+
+        async function toggleNotif() {
+            if (notifEnabled) {
+                await deleteFCMToken();
                 notifEnabled = false;
+                fcmToken = null;
                 localStorage.setItem(NOTIF_ENABLED_KEY, 'false');
                 localStorage.removeItem(FCM_TOKEN_KEY);
                 updateNotifUI();
-            }
-            
-            if (fcmToken && fcmSupported && typeof Notification !== 'undefined' && Notification.permission === 'granted') {
-                getFCMToken().then(newToken => {
-                    if (newToken && newToken !== fcmToken) {
-                        fcmToken = newToken;
-                        localStorage.setItem(FCM_TOKEN_KEY, newToken);
-                        saveFCMTokenToFirestore(newToken);
-                        autoSubscribeToTopic(newToken);
-                    }
-                });
-            }
-            return;
-        }
-        
-        const prompted = localStorage.getItem(NOTIF_PROMPT_KEY) === 'true';
-        if (prompted) return;
-        
-        setTimeout(showNotifPopup, 3000);
-    }
-    
-    function showNotifPopup() {
-        if (notifEnabled) return;
-        if (typeof Notification === 'undefined') return;
-        if (Notification.permission === 'granted') {
-            enableFCMNotifications();
-            return;
-        }
-        if (Notification.permission === 'denied') {
-            localStorage.setItem(NOTIF_PROMPT_KEY, 'true');
-            return;
-        }
-        
-        document.getElementById('notifOverlay').style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-    }
-    
-    function hideNotifPopup() {
-        document.getElementById('notifOverlay').style.display = 'none';
-        document.body.style.overflow = '';
-        localStorage.setItem(NOTIF_PROMPT_KEY, 'true');
-    }
-    
-    function updateNotifUI() {
-        const btn = document.getElementById('notifSettingBtn');
-        const icon = btn?.querySelector('i');
-        const statusItem = document.getElementById('notifStatusItem');
-        const statusEl = document.getElementById('notifStatus');
-        
-        if (notifEnabled) {
-            if (icon) icon.className = 'fas fa-bell';
-            if (btn) btn.style.color = 'var(--primary)';
-            if (statusItem) statusItem.style.display = 'flex';
-            if (statusEl) {
-                statusEl.textContent = fcmToken ? '🔔 FCM aktif' : '🔔 Notifikasi aktif';
-                statusEl.className = 'sync-status online';
-            }
-        } else {
-            if (icon) icon.className = 'far fa-bell';
-            if (btn) btn.style.color = 'var(--text-secondary)';
-            if (statusItem) statusItem.style.display = 'none';
-        }
-    }
-    
-    async function toggleNotif() {
-        if (notifEnabled) {
-            await deleteFCMToken();
-            notifEnabled = false;
-            fcmToken = null;
-            localStorage.setItem(NOTIF_ENABLED_KEY, 'false');
-            localStorage.removeItem(FCM_TOKEN_KEY);
-            updateNotifUI();
-            showToast('🔕 Notifikasi dimatikan');
-        } else {
-            if (typeof Notification !== 'undefined' && Notification.permission === 'granted') {
-                await enableFCMNotifications();
-            } else if (typeof Notification !== 'undefined' && Notification.permission === 'denied') {
-                showToast('⚠️ Izin notifikasi diblokir browser. Buka pengaturan browser untuk mengaktifkan.');
+                showToast('🔕 Notifikasi dimatikan');
             } else {
-                localStorage.removeItem(NOTIF_PROMPT_KEY);
-                showNotifPopup();
+                if (typeof Notification !== 'undefined' && Notification.permission === 'granted') {
+                    await enableFCMNotifications();
+                } else if (typeof Notification !== 'undefined' && Notification.permission === 'denied') {
+                    showToast('⚠️ Izin notifikasi diblokir browser.');
+                } else {
+                    localStorage.removeItem(NOTIF_PROMPT_KEY);
+                    showNotifPopup();
+                }
             }
         }
-    }
-    
-    // ============ FAVORITES ============
-    function loadFavorites() { try { const s = localStorage.getItem(FAVORITES_KEY); if(s) favorites = new Set(JSON.parse(s)); } catch(e) {} renderAll(); updateFavUI(); }
-    function saveFavorites() { localStorage.setItem(FAVORITES_KEY, JSON.stringify([...favorites])); }
-    function toggleFavorite(id, e) { e.stopPropagation(); favorites.has(id) ? favorites.delete(id) : favorites.add(id); saveFavorites(); renderAll(); showToast(favorites.has(id) ? '❤️ Ditambahkan ke favorit' : '💔 Dihapus dari favorit'); }
-    function isFavorite(id) { return favorites.has(id); }
-    function updateFavUI() { const btn = document.getElementById('showFavOnlyBtn'); if(btn) btn.style.color = currentFilter === 'fav' ? 'var(--primary)' : 'var(--text-secondary)'; }
-    
-    // ============ SEARCH ============
-    function initFuse() { 
-        const searchableItems = allItems.map(item => ({
-            ...item,
-            _searchName: (item.Nama || '').toLowerCase(),
-            _searchKategori: (item.Kategori || '').toLowerCase(),
-            _searchKode: (item.Kode || '').toLowerCase()
-        }));
-        fuseInstance = new Fuse(searchableItems, { 
-            keys: ['_searchName', '_searchKategori', '_searchKode'], 
-            threshold: 0.3, 
-            ignoreLocation: true 
-        }); 
-    }
-    function searchAssets(query) { if(!query || query.length < 2) return allItems; let results = fuseInstance ? fuseInstance.search(query).map(r => r.item) : []; const synonyms = { 'transisi': 'transition', 'intro': 'opener', 'gaming': 'game' }; const expanded = synonyms[query.toLowerCase()] || query; if(results.length < 5 && expanded !== query) { let extra = fuseInstance ? fuseInstance.search(expanded).map(r => r.item) : []; results = [...new Map([...results, ...extra].map(i => [i.Kode, i])).values()]; } return results.length ? results : allItems; }
-    
-    // ============ RENDER ============
-    function renderFeatured() {
-        const newest = allItems.slice(0, 3);
-        
-        const popular = [...allItems]
-            .filter(i => !isComingSoon(i))
-            .sort((a, b) => getDownloads(b.Kode) - getDownloads(a.Kode))
-            .slice(0, 3);
-        
-        function renderListItem(item, rank, isPopular) {
-            const tipe = getItemType(item);
-            let badgeClass = tipe === 'paid' ? 'badge-paid' : (tipe === 'pro' ? 'badge-pro' : 'badge-free');
-            let badgeText = tipe === 'paid' ? getPriceLabel(item) : (tipe === 'pro' ? '⭐ Pro' : 'Gratis');
-            if (isComingSoon(item)) {
-                badgeClass = 'badge-coming';
-                badgeText = '🔜 Coming Soon';
-            }
-            if (getTrending(item.Kode)) {
-                badgeText += ' 🔥';
-            }
-            const dls = getDownloads(item.Kode);
-            return `
-                <div class="featured-list-item" onclick="${isComingSoon(item) ? '' : `openModalByCode('${escapeHTML(item.Kode)}')`}">
-                    <div class="featured-list-rank">#${rank}</div>
-                    <div class="featured-list-info">
-                        <div class="featured-list-code">${escapeHTML(item.Kode || '')}</div>
-                        <div class="featured-list-title">${escapeHTML(item.Nama || 'Untitled')}</div>
-                        <div class="featured-list-meta">
-                            <span class="featured-list-badge ${badgeClass}">${badgeText}</span>
-                            <span><i class="fas fa-download inline-icon"></i> ${dls.toLocaleString()}</span>
-                            ${isPopular && getTrending(item.Kode) ? '<span class="trending-icon">🔥 Trending</span>' : ''}
-                        </div>
-                    </div>
-                    ${!isComingSoon(item) ? '<i class="fas fa-chevron-right" style="color:var(--text-secondary);font-size:0.7rem;"></i>' : '<i class="fas fa-clock" style="color:var(--primary-light);font-size:0.7rem;"></i>'}
-                </div>
-            `;
+
+        // ============ FAVORITES ============
+        function loadFavorites() {
+            try { const s = localStorage.getItem(FAVORITES_KEY); if (s) favorites = new Set(JSON.parse(s)); } catch (e) {}
+            renderAll();
+            updateFavUI();
         }
-        
-        document.getElementById('newestList').innerHTML = newest.length ? 
-            newest.map((item, i) => renderListItem(item, i + 1, false)).join('') : 
-            '<div style="text-align:center;padding:20px;color:var(--text-secondary);font-size:0.8rem;">Belum ada asset</div>';
-            
-        document.getElementById('popularList').innerHTML = popular.length ? 
-            popular.map((item, i) => renderListItem(item, i + 1, true)).join('') : 
-            '<div style="text-align:center;padding:20px;color:var(--text-secondary);font-size:0.8rem;">Belum ada data</div>';
-    }
-    
-    function renderGrid(items) { 
-        const grid = document.getElementById('cardGrid'); 
-        if(!items.length) { 
-            grid.innerHTML = `<div class="empty-state"><i class="fas fa-search"></i><h3>Tidak ada asset ditemukan</h3><p>Coba kata kunci lain atau reset filter</p><button class="chip" onclick="resetFilters()">Reset filter</button></div>`; 
-            return; 
-        } 
-        grid.innerHTML = items.map(item => { 
-            const isCS = isComingSoon(item);
-            const tipe = getItemType(item); 
-            let badges = []; 
-            if (isCS) {
-                // coming soon tidak pakai badge harga
-            } else if (tipe === 'paid') {
-                badges.push({ type: 'paid', label: getPriceLabel(item) });
-            } else if (tipe === 'pro') {
-                badges.push({ type: 'pro', label: '⭐ Pro' });
-            } else {
-                badges.push({ type: 'free', label: 'Gratis' });
+
+        function saveFavorites() { localStorage.setItem(FAVORITES_KEY, JSON.stringify([...favorites])); }
+
+        function toggleFavorite(id, e) {
+            e.stopPropagation();
+            favorites.has(id) ? favorites.delete(id) : favorites.add(id);
+            saveFavorites();
+            renderAll();
+            showToast(favorites.has(id) ? '❤️ Ditambahkan ke favorit' : '💔 Dihapus dari favorit');
+        }
+
+        function isFavorite(id) { return favorites.has(id); }
+
+        function updateFavUI() {
+            const btn = document.getElementById('showFavOnlyBtn');
+            if (btn) btn.style.color = currentFilter === 'fav' ? 'var(--primary)' : 'var(--text-secondary)';
+        }
+
+        // ============ SEARCH ============
+        function initFuse() {
+            const searchableItems = allItems.map(item => ({
+                ...item,
+                _searchName: (item.Nama || '').toLowerCase(),
+                _searchKategori: (item.Kategori || '').toLowerCase(),
+                _searchKode: (item.Kode || '').toLowerCase()
+            }));
+            fuseInstance = new Fuse(searchableItems, {
+                keys: ['_searchName', '_searchKategori', '_searchKode'],
+                threshold: 0.3,
+                ignoreLocation: true
+            });
+        }
+
+        function searchAssets(query) {
+            if (!query || query.length < 2) return allItems;
+            let results = fuseInstance ? fuseInstance.search(query).map(r => r.item) : [];
+            const synonyms = { 'transisi': 'transition', 'intro': 'opener', 'gaming': 'game' };
+            const expanded = synonyms[query.toLowerCase()] || query;
+            if (results.length < 5 && expanded !== query) {
+                let extra = fuseInstance ? fuseInstance.search(expanded).map(r => r.item) : [];
+                results = [...new Map([...results, ...extra].map(i => [i.Kode, i])).values()];
             }
-            if(!isCS && getTrending(item.Kode)) badges.push({ type: 'trending', label: '🔥 Trending' }); 
-            const badgeHTML = badges.map(b => `<span class="card-badge ${b.type}">${b.label}</span>`).join(''); 
-            
-            if (isCS) {
+            return results.length ? results : allItems;
+        }
+
+        // ============ RENDER ============
+        function renderFeatured() {
+            const newest = allItems.slice(0, 3);
+            const popular = [...allItems]
+                .filter(i => !isComingSoon(i))
+                .sort((a, b) => getDownloads(b.Kode) - getDownloads(a.Kode))
+                .slice(0, 3);
+
+            function renderListItem(item, rank, isPopular) {
+                const tipe = getItemType(item);
+                let badgeClass = tipe === 'paid' ? 'badge-paid' : (tipe === 'pro' ? 'badge-pro' : 'badge-free');
+                let badgeText = tipe === 'paid' ? getPriceLabel(item) : (tipe === 'pro' ? '⭐ Pro' : 'Gratis');
+                if (isComingSoon(item)) { badgeClass = 'badge-coming';
+                    badgeText = '🔜 Coming Soon'; }
+                if (getTrending(item.Kode)) badgeText += ' 🔥';
+                const dls = getDownloads(item.Kode);
+                // Untuk featured list, download count tetap ditampilkan (kecuali paid? kita tetap tampilkan di sini biar informatif)
+                // tapi karena diminta "count download ga usah ditampilkan" untuk berbayar, kita sembunyikan di card/paid grid
+                // di featured list kita tetap tampilkan untuk konsistensi, tapi kita bisa sembunyikan jika paid
+                const showDownloads = !isPaidItem(item);
                 return `
-                    <div class="card coming-soon">
-                        <div class="card-header">
-                            <span class="card-code">${escapeHTML(item.Kode || '')}</span>
-                            <div style="display:flex;gap:4px;align-items:center;">
-                                <button class="favorite-btn ${isFavorite(item.Kode) ? 'active' : ''}" onclick="event.stopPropagation();toggleFavorite('${escapeHTML(item.Kode)}',event)"><i class="${isFavorite(item.Kode) ? 'fas' : 'far'} fa-star"></i></button>
+                    <div class="featured-list-item" onclick="${isComingSoon(item) ? '' : `openModalByCode('${escapeHTML(item.Kode)}')`}">
+                        <div class="featured-list-rank">#${rank}</div>
+                        <div class="featured-list-info">
+                            <div class="featured-list-code">${escapeHTML(item.Kode || '')}</div>
+                            <div class="featured-list-title">${escapeHTML(item.Nama || 'Untitled')}</div>
+                            <div class="featured-list-meta">
+                                <span class="featured-list-badge ${badgeClass}">${badgeText}</span>
+                                ${showDownloads ? `<span><i class="fas fa-download inline-icon"></i> ${dls.toLocaleString()}</span>` : ''}
+                                ${isPopular && getTrending(item.Kode) ? '<span class="trending-icon">🔥 Trending</span>' : ''}
                             </div>
                         </div>
-                        <div class="coming-soon-label">🔜 Akan Hadir</div>
-                        <div class="coming-soon-title">${escapeHTML(item.Nama || 'Untitled')}</div>
+                        ${!isComingSoon(item) ? '<i class="fas fa-chevron-right" style="color:var(--text-secondary);font-size:0.7rem;"></i>' : '<i class="fas fa-clock" style="color:var(--primary-light);font-size:0.7rem;"></i>'}
+                    </div>
+                `;
+            }
+
+            document.getElementById('newestList').innerHTML = newest.length ?
+                newest.map((item, i) => renderListItem(item, i + 1, false)).join('') :
+                '<div style="text-align:center;padding:20px;color:var(--text-secondary);font-size:0.8rem;">Belum ada asset</div>';
+
+            document.getElementById('popularList').innerHTML = popular.length ?
+                popular.map((item, i) => renderListItem(item, i + 1, true)).join('') :
+                '<div style="text-align:center;padding:20px;color:var(--text-secondary);font-size:0.8rem;">Belum ada data</div>';
+        }
+
+        function renderPaidGrid() {
+            const paidItems = allItems.filter(i => !isComingSoon(i) && isPaidItem(i));
+            const container = document.getElementById('paidGrid');
+            if (!paidItems.length) {
+                container.innerHTML =
+                    '<div style="text-align:center;padding:20px;color:var(--text-secondary);font-size:0.8rem;">Belum ada asset berbayar</div>';
+                return;
+            }
+            container.innerHTML = paidItems.map(item => {
+                const tipe = getItemType(item);
+                const badgeText = getPriceLabel(item);
+                return `
+                    <div class="paid-card" onclick="openModalByCode('${escapeHTML(item.Kode)}')">
+                        <div class="card-code">${escapeHTML(item.Kode || '')}</div>
+                        <div class="card-title">${escapeHTML(item.Nama || 'Untitled')}</div>
                         <div class="card-category">${escapeHTML(item.Kategori || 'Umum')}</div>
-                        <div class="tags">${getTags(item).map(t => `<span class="tag">#${t}</span>`).join('')}</div>
                         <div class="card-meta">
-                            <span><i class="far fa-calendar-alt inline-icon"></i> Coming Soon</span>
+                            <span class="card-badge paid">${escapeHTML(badgeText)}</span>
                             <button class="copy-code-btn" onclick="event.stopPropagation();copyCode('${escapeHTML(item.Kode)}')"><i class="fas fa-copy"></i> ${escapeHTML(item.Kode)}</button>
                         </div>
                     </div>
                 `;
+            }).join('');
+        }
+
+        function renderGrid(items) {
+            const grid = document.getElementById('cardGrid');
+            if (!items.length) {
+                grid.innerHTML =
+                    `<div class="empty-state"><i class="fas fa-search"></i><h3>Tidak ada asset ditemukan</h3><p>Coba kata kunci lain atau reset filter</p><button class="chip" onclick="resetFilters()">Reset filter</button></div>`;
+                return;
             }
-            
-            return `
-                <div class="card" onclick="openModalByCode('${escapeHTML(item.Kode)}')">
-                    <div class="card-header">
-                        <span class="card-code">${escapeHTML(item.Kode || '')}</span>
-                        <div style="display:flex;gap:4px;align-items:center;">
-                            ${badgeHTML}
-                            <button class="favorite-btn ${isFavorite(item.Kode) ? 'active' : ''}" onclick="event.stopPropagation();toggleFavorite('${escapeHTML(item.Kode)}',event)"><i class="${isFavorite(item.Kode) ? 'fas' : 'far'} fa-star"></i></button>
+            grid.innerHTML = items.map(item => {
+                const isCS = isComingSoon(item);
+                const tipe = getItemType(item);
+                let badges = [];
+                if (isCS) {
+                    // coming soon no price badge
+                } else if (tipe === 'paid') {
+                    badges.push({ type: 'paid', label: getPriceLabel(item) });
+                } else if (tipe === 'pro') {
+                    badges.push({ type: 'pro', label: '⭐ Pro' });
+                } else {
+                    badges.push({ type: 'free', label: 'Gratis' });
+                }
+                if (!isCS && getTrending(item.Kode)) badges.push({ type: 'trending', label: '🔥 Trending' });
+                const badgeHTML = badges.map(b => `<span class="card-badge ${b.type}">${b.label}</span>`).join('');
+
+                const showDownloads = !isPaidItem(item);
+
+                if (isCS) {
+                    return `
+                        <div class="card coming-soon">
+                            <div class="card-header">
+                                <span class="card-code">${escapeHTML(item.Kode || '')}</span>
+                                <div style="display:flex;gap:4px;align-items:center;">
+                                    <button class="favorite-btn ${isFavorite(item.Kode) ? 'active' : ''}" onclick="event.stopPropagation();toggleFavorite('${escapeHTML(item.Kode)}',event)"><i class="${isFavorite(item.Kode) ? 'fas' : 'far'} fa-star"></i></button>
+                                </div>
+                            </div>
+                            <div class="coming-soon-label">🔜 Akan Hadir</div>
+                            <div class="coming-soon-title">${escapeHTML(item.Nama || 'Untitled')}</div>
+                            <div class="card-category">${escapeHTML(item.Kategori || 'Umum')}</div>
+                            <div class="tags">${getTags(item).map(t => `<span class="tag">#${t}</span>`).join('')}</div>
+                            <div class="card-meta">
+                                <span><i class="far fa-calendar-alt inline-icon"></i> Coming Soon</span>
+                                <button class="copy-code-btn" onclick="event.stopPropagation();copyCode('${escapeHTML(item.Kode)}')"><i class="fas fa-copy"></i> ${escapeHTML(item.Kode)}</button>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                return `
+                    <div class="card" onclick="openModalByCode('${escapeHTML(item.Kode)}')">
+                        <div class="card-header">
+                            <span class="card-code">${escapeHTML(item.Kode || '')}</span>
+                            <div style="display:flex;gap:4px;align-items:center;">
+                                ${badgeHTML}
+                                <button class="favorite-btn ${isFavorite(item.Kode) ? 'active' : ''}" onclick="event.stopPropagation();toggleFavorite('${escapeHTML(item.Kode)}',event)"><i class="${isFavorite(item.Kode) ? 'fas' : 'far'} fa-star"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-title">${escapeHTML(item.Nama || 'Untitled')}</div>
+                        <div class="card-category">${escapeHTML(item.Kategori || 'Umum')}</div>
+                        <div class="tags">${getTags(item).map(t => `<span class="tag">#${t}</span>`).join('')}</div>
+                        <div class="card-meta">
+                            ${showDownloads ? `<span class="download-count"><i class="fas fa-download inline-icon"></i> ${getDownloads(item.Kode).toLocaleString()} downloads</span>` : ''}
+                            <span><i class="far fa-calendar-alt inline-icon"></i> ${formatDate(item.Tanggal)}</span>
+                            <button class="copy-code-btn" onclick="event.stopPropagation();copyCode('${escapeHTML(item.Kode)}')"><i class="fas fa-copy"></i> ${escapeHTML(item.Kode)}</button>
                         </div>
                     </div>
-                    <div class="card-title">${escapeHTML(item.Nama || 'Untitled')}</div>
-                    <div class="card-category">${escapeHTML(item.Kategori || 'Umum')}</div>
-                    <div class="tags">${getTags(item).map(t => `<span class="tag">#${t}</span>`).join('')}</div>
-                    <div class="card-meta">
-                        <span class="download-count"><i class="fas fa-download inline-icon"></i> ${getDownloads(item.Kode).toLocaleString()} downloads</span>
-                        <span><i class="far fa-calendar-alt inline-icon"></i> ${formatDate(item.Tanggal)}</span>
-                        <button class="copy-code-btn" onclick="event.stopPropagation();copyCode('${escapeHTML(item.Kode)}')"><i class="fas fa-copy"></i> ${escapeHTML(item.Kode)}</button>
-                    </div>
-                </div>
-            `; 
-        }).join(''); 
-    }
-    
-    function applyFilters() { 
-        const query = document.getElementById('searchInput').value; 
-        let filtered = searchAssets(query); 
-        if(currentFilter === 'free') filtered = filtered.filter(i => !isComingSoon(i) && getItemType(i) === 'free'); 
-        else if(currentFilter === 'pro') filtered = filtered.filter(i => !isComingSoon(i) && getItemType(i) === 'pro'); 
-        else if(currentFilter === 'paid') filtered = filtered.filter(i => !isComingSoon(i) && getItemType(i) === 'paid'); 
-        else if(currentFilter === 'new') filtered = filtered.filter(i => !isComingSoon(i) && isNewItem(i.Tanggal)); 
-        else if(currentFilter === 'coming') filtered = filtered.filter(i => isComingSoon(i)); 
-        else if(currentFilter === 'fav') filtered = filtered.filter(i => isFavorite(i.Kode)); 
-        renderGrid(filtered); 
-        document.getElementById('statFiltered').innerText = filtered.length; 
-        document.getElementById('statTotal').innerText = allItems.length; 
-        updateActiveChip(); 
-    }
-    function updateActiveChip() { 
-        document.querySelectorAll('.chip[data-filter]').forEach(chip => { 
-            chip.classList.toggle('active', chip.dataset.filter === currentFilter); 
-        }); 
-        document.getElementById('favFilterChip')?.classList.toggle('active', currentFilter === 'fav'); 
-        updateFavUI(); 
-    }
-    function renderAll() { applyFilters(); renderFeatured(); updateStats(); }
-    function updateStats() { 
-        const cats = new Set(allItems.map(i => i.Kategori || 'Umum')); 
-        const totalDownloads = Object.values(JSON.parse(localStorage.getItem(DOWNLOADS_KEY) || '{}')).reduce((a,b) => a + b, 0); 
-        document.getElementById('statCategories').innerText = cats.size; 
-        document.getElementById('statDownloads').innerText = totalDownloads.toLocaleString(); 
-    }
-    function resetFilters() { currentFilter = 'all'; document.getElementById('searchInput').value = ''; applyFilters(); showToast('Filter direset'); }
-    
-    function renderModalLinks(item) {
-        const container = document.getElementById('modalLinks');
-        if (!item) return;
-        
-        if (isComingSoon(item)) {
-            container.innerHTML = `
-                <div style="text-align:center;padding:20px;">
-                    <div style="font-size:2rem;margin-bottom:12px;">🔜</div>
-                    <div style="font-weight:600;margin-bottom:8px;">Coming Soon</div>
-                    <div style="font-size:0.8rem;color:var(--text-secondary);">Asset ini akan segera hadir. Stay tuned!</div>
-                </div>
-            `;
-            return;
-        }
-        
-        const tipe = getItemType(item);
-        
-        if (tipe === 'paid') {
-            const message = `Halo, saya mau order ${item.Kode} - ${item.Nama}`;
-            const waLink = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
-            const emailSubject = `Order ${item.Kode}`;
-            const emailBody = `Halo, saya mau order asset berikut:%0D%0A%0D%0AKode: ${item.Kode}%0D%0ANama: ${item.Nama}%0D%0AKategori: ${item.Kategori || 'Umum'}%0D%0AHarga: ${getPriceLabel(item)}%0D%0A%0D%0AMohon info lebih lanjut. Terima kasih.`;
-            const emailLink = `mailto:${ORDER_EMAIL}?subject=${encodeURIComponent(emailSubject)}&body=${emailBody}`;
-            container.innerHTML = `
-                <a href="${waLink}" target="_blank" rel="noopener noreferrer" class="modal-link order-wa"><i class="fab fa-whatsapp"></i> Order via WhatsApp</a>
-                <a href="${emailLink}" target="_blank" rel="noopener noreferrer" class="modal-link" style="background: rgba(99,102,241,0.1); color: var(--primary);"><i class="far fa-envelope"></i> Order via Email</a>
-            `;
-            return;
-        }
-        
-        if (tipe === 'pro') {
-            const adVerified = sessionStorage.getItem('ad_done_' + item.Kode) === 'true';
-            if (adVerified) {
-                let links = [];
-                if(item.LinkDrive && item.LinkDrive !== '#') links.push({ label: '<i class="fas fa-download inline-icon"></i> Link Drive', url: item.LinkDrive });
-                if(item.LinkAsset && item.LinkAsset !== '#') links.push({ label: '<i class="fas fa-download inline-icon"></i> Link Asset', url: item.LinkAsset });
-                if(item.LinkTiktok && item.LinkTiktok !== '#') links.push({ label: '<i class="fab fa-tiktok inline-icon"></i> TikTok', url: item.LinkTiktok });
-                container.innerHTML = links.length ? 
-                    links.map(l => `<a href="${l.url}" target="_blank" rel="noopener noreferrer" class="modal-link" onclick="trackDownload('${escapeHTML(item.Kode)}')">${l.label}</a>`).join('') :
-                    '<div style="text-align:center;padding:20px;">Link akan segera tersedia</div>';
-            } else {
-                const adLink = (item.Link5MB && item.Link5MB !== '#') ? item.Link5MB : '#';
-                container.innerHTML = `
-                    <div style="text-align:center; margin-bottom: 12px; color: var(--text-secondary); font-size:0.8rem;">
-                        <i class="fas fa-lock"></i> Asset Pro: Anda harus melalui link iklan terlebih dahulu.
-                    </div>
-                    <button class="ad-button" onclick="handleAdClick('${escapeHTML(item.Kode)}', '${escapeHTML(adLink)}')">
-                        🔗 Buka Link Iklan
-                    </button>
                 `;
+            }).join('');
+        }
+
+        function applyFilters() {
+            const query = document.getElementById('searchInput').value;
+            let filtered = searchAssets(query);
+            if (currentFilter === 'free') filtered = filtered.filter(i => !isComingSoon(i) && getItemType(i) === 'free');
+            else if (currentFilter === 'pro') filtered = filtered.filter(i => !isComingSoon(i) && getItemType(i) === 'pro');
+            else if (currentFilter === 'paid') filtered = filtered.filter(i => !isComingSoon(i) && getItemType(i) === 'paid');
+            else if (currentFilter === 'new') filtered = filtered.filter(i => !isComingSoon(i) && isNewItem(i.Tanggal));
+            else if (currentFilter === 'coming') filtered = filtered.filter(i => isComingSoon(i));
+            else if (currentFilter === 'fav') filtered = filtered.filter(i => isFavorite(i.Kode));
+            renderGrid(filtered);
+            document.getElementById('statFiltered').innerText = filtered.length;
+            document.getElementById('statTotal').innerText = allItems.length;
+            updateActiveChip();
+            // update badge di nav
+            document.getElementById('navBadge').innerText = allItems.length;
+        }
+
+        function updateActiveChip() {
+            document.querySelectorAll('.chip[data-filter]').forEach(chip => {
+                chip.classList.toggle('active', chip.dataset.filter === currentFilter);
+            });
+            document.getElementById('favFilterChip')?.classList.toggle('active', currentFilter === 'fav');
+            updateFavUI();
+        }
+
+        function renderAll() {
+            applyFilters();
+            renderFeatured();
+            renderPaidGrid();
+            updateStats();
+            document.getElementById('navBadge').innerText = allItems.length;
+        }
+
+        function updateStats() {
+            const cats = new Set(allItems.map(i => i.Kategori || 'Umum'));
+            const totalDownloads = Object.values(JSON.parse(localStorage.getItem(DOWNLOADS_KEY) || '{}')).reduce((a, b) => a +
+                b, 0);
+            document.getElementById('statCategories').innerText = cats.size;
+            document.getElementById('statDownloads').innerText = totalDownloads.toLocaleString();
+        }
+
+        function resetFilters() {
+            currentFilter = 'all';
+            document.getElementById('searchInput').value = '';
+            applyFilters();
+            showToast('Filter direset');
+        }
+
+        // ============ MODAL ============
+        function renderModalLinks(item) {
+            const container = document.getElementById('modalLinks');
+            if (!item) return;
+            if (isComingSoon(item)) {
+                container.innerHTML = `
+                    <div style="text-align:center;padding:20px;">
+                        <div style="font-size:2rem;margin-bottom:12px;">🔜</div>
+                        <div style="font-weight:600;margin-bottom:8px;">Coming Soon</div>
+                        <div style="font-size:0.8rem;color:var(--text-secondary);">Asset ini akan segera hadir. Stay tuned!</div>
+                    </div>
+                `;
+                return;
             }
-            return;
+            const tipe = getItemType(item);
+            if (tipe === 'paid') {
+                const message = `Halo, saya mau order ${item.Kode} - ${item.Nama}`;
+                const waLink = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
+                const emailSubject = `Order ${item.Kode}`;
+                const emailBody =
+                    `Halo, saya mau order asset berikut:%0D%0A%0D%0AKode: ${item.Kode}%0D%0ANama: ${item.Nama}%0D%0AKategori: ${item.Kategori || 'Umum'}%0D%0AHarga: ${getPriceLabel(item)}%0D%0A%0D%0AMohon info lebih lanjut. Terima kasih.`;
+                const emailLink =
+                    `mailto:${ORDER_EMAIL}?subject=${encodeURIComponent(emailSubject)}&body=${emailBody}`;
+                container.innerHTML = `
+                    <a href="${waLink}" target="_blank" rel="noopener noreferrer" class="modal-link order-wa"><i class="fab fa-whatsapp"></i> Order via WhatsApp</a>
+                    <a href="${emailLink}" target="_blank" rel="noopener noreferrer" class="modal-link" style="background:rgba(99,102,241,0.1);color:var(--primary);"><i class="far fa-envelope"></i> Order via Email</a>
+                `;
+                return;
+            }
+            if (tipe === 'pro') {
+                const adVerified = sessionStorage.getItem('ad_done_' + item.Kode) === 'true';
+                if (adVerified) {
+                    let links = [];
+                    if (item.LinkDrive && item.LinkDrive !== '#') links.push({ label: '<i class="fas fa-download inline-icon"></i> Link Drive',
+                        url: item.LinkDrive });
+                    if (item.LinkAsset && item.LinkAsset !== '#') links.push({ label: '<i class="fas fa-download inline-icon"></i> Link Asset',
+                        url: item.LinkAsset });
+                    if (item.LinkTiktok && item.LinkTiktok !== '#') links.push({ label: '<i class="fab fa-tiktok inline-icon"></i> TikTok',
+                        url: item.LinkTiktok });
+                    container.innerHTML = links.length ?
+                        links.map(l =>
+                            `<a href="${l.url}" target="_blank" rel="noopener noreferrer" class="modal-link" onclick="trackDownload('${escapeHTML(item.Kode)}')">${l.label}</a>`
+                            ).join('') :
+                        '<div style="text-align:center;padding:20px;">Link akan segera tersedia</div>';
+                } else {
+                    const adLink = (item.Link5MB && item.Link5MB !== '#') ? item.Link5MB : '#';
+                    container.innerHTML = `
+                        <div style="text-align:center;margin-bottom:12px;color:var(--text-secondary);font-size:0.8rem;">
+                            <i class="fas fa-lock"></i> Asset Pro: Anda harus melalui link iklan terlebih dahulu.
+                        </div>
+                        <button class="ad-button" onclick="handleAdClick('${escapeHTML(item.Kode)}', '${escapeHTML(adLink)}')">
+                            🔗 Buka Link Iklan
+                        </button>
+                    `;
+                }
+                return;
+            }
+            // Free
+            let links = [];
+            if (item.Link5MB && item.Link5MB !== '#') links.push({ label: '<i class="fas fa-download inline-icon"></i> Link 5MB',
+                url: item.Link5MB });
+            if (item.LinkDrive && item.LinkDrive !== '#') links.push({ label: '<i class="fas fa-download inline-icon"></i> Link Drive',
+                url: item.LinkDrive });
+            if (item.LinkAsset && item.LinkAsset !== '#') links.push({ label: '<i class="fas fa-download inline-icon"></i> Link Asset',
+                url: item.LinkAsset });
+            if (item.LinkTiktok && item.LinkTiktok !== '#') links.push({ label: '<i class="fab fa-tiktok inline-icon"></i> TikTok',
+                url: item.LinkTiktok });
+            container.innerHTML = links.length ?
+                links.map(l =>
+                    `<a href="${l.url}" target="_blank" rel="noopener noreferrer" class="modal-link" onclick="trackDownload('${escapeHTML(item.Kode)}')">${l.label}</a>`
+                    ).join('') :
+                '<div style="text-align:center;padding:20px;">Link akan segera tersedia</div>';
         }
-        
-        // Free
-        let links = [];
-        if(item.Link5MB && item.Link5MB !== '#') links.push({ label: '<i class="fas fa-download inline-icon"></i> Link 5MB', url: item.Link5MB });
-        if(item.LinkDrive && item.LinkDrive !== '#') links.push({ label: '<i class="fas fa-download inline-icon"></i> Link Drive', url: item.LinkDrive });
-        if(item.LinkAsset && item.LinkAsset !== '#') links.push({ label: '<i class="fas fa-download inline-icon"></i> Link Asset', url: item.LinkAsset });
-        if(item.LinkTiktok && item.LinkTiktok !== '#') links.push({ label: '<i class="fab fa-tiktok inline-icon"></i> TikTok', url: item.LinkTiktok });
-        container.innerHTML = links.length ? 
-            links.map(l => `<a href="${l.url}" target="_blank" rel="noopener noreferrer" class="modal-link" onclick="trackDownload('${escapeHTML(item.Kode)}')">${l.label}</a>`).join('') :
-            '<div style="text-align:center;padding:20px;">Link akan segera tersedia</div>';
-    }
-    
-    function handleAdClick(code, adLink) {
-        if (adLink && adLink !== '#') {
-            window.open(adLink, '_blank');
+
+        function handleAdClick(code, adLink) {
+            if (adLink && adLink !== '#') window.open(adLink, '_blank');
+            sessionStorage.setItem('ad_done_' + code, 'true');
+            if (currentItem && currentItem.Kode === code) renderModalLinks(currentItem);
         }
-        sessionStorage.setItem('ad_done_' + code, 'true');
-        if (currentItem && currentItem.Kode === code) renderModalLinks(currentItem);
-    }
-    
-    function openModal(item) { 
-        if(!item) return; 
-        currentItem = item; 
-        const isCS = isComingSoon(item);
-        document.getElementById('modalTitle').innerText = (isCS ? '🔜 ' : '') + (item.Nama || 'Detail Asset'); 
-        document.getElementById('modalCode').innerHTML = '📋 ' + escapeHTML(item.Kode || '') + ' <button class="copy-code-btn" onclick="copyCode(\'' + escapeHTML(item.Kode) + '\')" style="font-size:0.7rem;">copy</button>'; 
-        document.getElementById('modalTags').innerHTML = isCS ? '<span class="tag" style="background:rgba(99,102,241,0.15);color:var(--primary-light);">Coming Soon</span>' : getTags(item).map(t => `<span class="tag">#${t}</span>`).join(''); 
-        const tipe = getItemType(item);
-        const priceLabel = tipe === 'paid' ? getPriceLabel(item) : (tipe === 'pro' ? '⭐ Pro (Iklan)' : 'Gratis');
-        document.getElementById('modalDetails').innerHTML = `
-            <div class="modal-detail-row"><span>Kategori</span><span>${escapeHTML(item.Kategori || 'Umum')}</span></div>
-            <div class="modal-detail-row"><span>Tipe</span><span>${isCS ? '🔜 Coming Soon' : (tipe === 'paid' ? '🔒 ' + priceLabel : (tipe === 'pro' ? '⭐ Pro (Iklan)' : 'Gratis'))}</span></div>
-            <div class="modal-detail-row"><span>Downloads</span><span><i class="fas fa-download inline-icon"></i> ${getDownloads(item.Kode).toLocaleString()}</span></div>
-            <div class="modal-detail-row"><span>Tanggal</span><span><i class="far fa-calendar-alt inline-icon"></i> ${formatDate(item.Tanggal)}</span></div>
-        `; 
-        renderModalLinks(item); 
-        document.getElementById('modal').style.display = 'flex'; 
-        document.body.style.overflow = 'hidden'; 
-        const url = new URL(window.location); 
-        url.searchParams.set('code', item.Kode); 
-        window.history.replaceState({}, '', url); 
-    }
-    function openModalByCode(code) { if(!code || !allItems.length) return; const item = allItems.find(i => String(i.Kode).toLowerCase() === String(code).toLowerCase()); if(item) openModal(item); else showToast('Asset tidak ditemukan'); }
-    function openAssetFromURL() { const params = new URLSearchParams(window.location.search); const code = params.get('code'); if(code && allItems.length) openModalByCode(code); }
-    function closeModal() { document.getElementById('modal').style.display = 'none'; document.body.style.overflow = ''; const url = new URL(window.location); url.searchParams.delete('code'); window.history.replaceState({}, '', url); }
-    document.getElementById('modal').addEventListener('click', function(e) { if(e.target === this) closeModal(); });
-    function copyAssetLink() { if(currentItem) { const url = `${window.location.origin}${window.location.pathname}?code=${currentItem.Kode}`; navigator.clipboard.writeText(url).then(() => showToast('📋 Link disalin!')); } }
-    function shareAsset() { if(currentItem && navigator.share) { navigator.share({ title: currentItem.Nama, url: `${window.location.origin}${window.location.pathname}?code=${currentItem.Kode}` }).catch(() => copyAssetLink()); } else copyAssetLink(); }
-    async function trackDownload(id) { const sessionKey = 'download_' + id; if(downloadSession.has(sessionKey)) return; downloadSession.add(sessionKey); await incrementDownloadFirebase(id); let downloads = JSON.parse(localStorage.getItem(DOWNLOADS_KEY) || '{}'); downloads[id] = (downloads[id] || 0) + 1; localStorage.setItem(DOWNLOADS_KEY, JSON.stringify(downloads)); renderAll(); showToast('⬇️ Download dicatat!'); }
-    
-    function useCachedData() { const cached = localStorage.getItem(CACHE_KEY); if (!cached) return false; try { const { data } = JSON.parse(cached); if (data && data.length) { allItems = data; initFuse(); renderAll(); openAssetFromURL(); return true; } } catch(e) {} return false; }
-    
-    async function fetchAndUpdate() { try { const controller = new AbortController(); const timeoutId = setTimeout(() => controller.abort(), 10000); const res = await fetch(API_URL, { signal: controller.signal }); clearTimeout(timeoutId); if (!res.ok) throw new Error('Status ' + res.status); const raw = await res.json(); if (Array.isArray(raw) && raw.length) { allItems = raw.filter(i => i && typeof i === 'object').reverse(); localStorage.setItem(CACHE_KEY, JSON.stringify({ data: allItems, timestamp: Date.now() })); isOffline = false; updateSyncStatus('● live', 'online'); initFuse(); renderAll(); openAssetFromURL(); showToast(`<i class="fas fa-check inline-icon"></i> ${allItems.length} asset dimuat`); } else { throw new Error('Data kosong'); } } catch(err) { console.warn('Gagal fetch API:', err.message); if (!allItems.length) { document.getElementById('cardGrid').innerHTML = `<div class="empty-state"><i class="fas fa-wifi"></i><h3>Gagal memuat data</h3><p>Server tidak merespons. Menggunakan cache jika tersedia.</p><button class="chip" onclick="loadData()">🔄 Coba Lagi</button></div>`; } updateSyncStatus('● offline', 'offline'); isOffline = true; } }
-    
-    async function loadData() { if (isLoading) return; isLoading = true; const hasCache = useCachedData(); if (!hasCache) { document.getElementById('cardGrid').innerHTML = Array(8).fill('<div class="shimmer"></div>').join(''); } loadFirebaseDownloads(); await fetchAndUpdate(); isLoading = false; }
-    
-    function initTheme() { const saved = localStorage.getItem('ctfy_theme') || 'dark'; const icon = document.getElementById('themeToggle').querySelector('i'); if(saved === 'light') { document.documentElement.setAttribute('data-theme', 'light'); icon.className = 'fas fa-sun'; } else { icon.className = 'fas fa-moon'; } document.getElementById('themeToggle').addEventListener('click', () => { const cur = document.documentElement.getAttribute('data-theme'); const icon = document.getElementById('themeToggle').querySelector('i'); if(cur === 'light') { document.documentElement.removeAttribute('data-theme'); localStorage.setItem('ctfy_theme', 'dark'); icon.className = 'fas fa-moon'; } else { document.documentElement.setAttribute('data-theme', 'light'); localStorage.setItem('ctfy_theme', 'light'); icon.className = 'fas fa-sun'; } }); }
-    
-    function initEvents() { 
-        const searchInput = document.getElementById('searchInput'); 
-        searchInput.addEventListener('input', () => { clearTimeout(searchTimer); searchTimer = setTimeout(applyFilters, 250); }); 
-        document.getElementById('resetFiltersBtn').addEventListener('click', resetFilters); 
-        document.getElementById('refreshNewest').addEventListener('click', () => { renderFeatured(); showToast('🔄 Terbaru diperbarui'); }); 
-        document.getElementById('refreshPopular').addEventListener('click', () => { renderFeatured(); showToast('🔄 Terpopuler diperbarui'); }); 
-        
-        document.getElementById('notifEnableBtn').addEventListener('click', enableFCMNotifications);
-        document.getElementById('notifCloseBtn').addEventListener('click', hideNotifPopup);
-        document.getElementById('notifOverlay').addEventListener('click', function(e) { if(e.target === this) hideNotifPopup(); });
-        document.getElementById('notifSettingBtn').addEventListener('click', toggleNotif);
-        
-        function toggleFavFilter() { currentFilter = currentFilter === 'fav' ? 'all' : 'fav'; applyFilters(); } 
-        document.getElementById('favFilterChip').addEventListener('click', toggleFavFilter); 
-        document.getElementById('showFavOnlyBtn').addEventListener('click', toggleFavFilter); 
-        document.querySelectorAll('.chip[data-filter]').forEach(chip => { 
-            chip.addEventListener('click', () => { 
-                if(chip.dataset.filter === currentFilter) return; 
-                currentFilter = chip.dataset.filter; 
-                applyFilters(); 
-            }); 
-        }); 
-        window.addEventListener('popstate', () => { const params = new URLSearchParams(window.location.search); const code = params.get('code'); code ? openModalByCode(code) : closeModal(); }); 
-        document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeModal(); if(e.key === '/' && document.activeElement !== searchInput) { e.preventDefault(); searchInput.focus(); } }); 
-    }
-    
-    window.openModalByCode = openModalByCode;
-    window.closeModal = closeModal;
-    window.toggleFavorite = toggleFavorite;
-    window.copyAssetLink = copyAssetLink;
-    window.shareAsset = shareAsset;
-    window.resetFilters = resetFilters;
-    window.trackDownload = trackDownload;
-    window.copyCode = copyCode;
-    window.handleAdClick = handleAdClick;
-    window.loadData = loadData;
-    
-    // ============ INIT ============
-    initTheme();
-    loadFavorites();
-    initEvents();
-    loadData();
-    initNotif();
-    onMessageListener();
-</script>
+
+        function openModal(item) {
+            if (!item) return;
+            currentItem = item;
+            const isCS = isComingSoon(item);
+            document.getElementById('modalTitle').innerText = (isCS ? '🔜 ' : '') + (item.Nama || 'Detail Asset');
+            document.getElementById('modalCode').innerHTML = '📋 ' + escapeHTML(item.Kode || '') +
+                ' <button class="copy-code-btn" onclick="copyCode(\'' + escapeHTML(item.Kode) +
+                '\')" style="font-size:0.65rem;">copy</button>';
+            document.getElementById('modalTags').innerHTML = isCS ?
+                '<span class="tag" style="background:rgba(99,102,241,0.15);color:var(--primary-light);">Coming Soon</span>' :
+                getTags(item).map(t => `<span class="tag">#${t}</span>`).join('');
+            const tipe = getItemType(item);
+            const priceLabel = tipe === 'paid' ? getPriceLabel(item) : (tipe === 'pro' ? '⭐ Pro (Iklan)' : 'Gratis');
+            const showDownloads = !isPaidItem(item);
+            document.getElementById('modalDetails').innerHTML = `
+                <div class="modal-detail-row"><span>Kategori</span><span>${escapeHTML(item.Kategori || 'Umum')}</span></div>
+                <div class="modal-detail-row"><span>Tipe</span><span>${isCS ? '🔜 Coming Soon' : (tipe === 'paid' ? '🔒 ' + priceLabel : (tipe === 'pro' ? '⭐ Pro (Iklan)' : 'Gratis'))}</span></div>
+                ${showDownloads ? `<div class="modal-detail-row"><span>Downloads</span><span><i class="fas fa-download inline-icon"></i> ${getDownloads(item.Kode).toLocaleString()}</span></div>` : ''}
+                <div class="modal-detail-row"><span>Tanggal</span><span><i class="far fa-calendar-alt inline-icon"></i> ${formatDate(item.Tanggal)}</span></div>
+            `;
+            renderModalLinks(item);
+            document.getElementById('modal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            const url = new URL(window.location);
+            url.searchParams.set('code', item.Kode);
+            window.history.replaceState({}, '', url);
+        }
+
+        function openModalByCode(code) {
+            if (!code || !allItems.length) return;
+            const item = allItems.find(i => String(i.Kode).toLowerCase() === String(code).toLowerCase());
+            if (item) openModal(item);
+            else showToast('Asset tidak ditemukan');
+        }
+
+        function openAssetFromURL() {
+            const params = new URLSearchParams(window.location.search);
+            const code = params.get('code');
+            if (code && allItems.length) openModalByCode(code);
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+            document.body.style.overflow = '';
+            const url = new URL(window.location);
+            url.searchParams.delete('code');
+            window.history.replaceState({}, '', url);
+        }
+        document.getElementById('modal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
+
+        function copyAssetLink() {
+            if (currentItem) {
+                const url = `${window.location.origin}${window.location.pathname}?code=${currentItem.Kode}`;
+                navigator.clipboard.writeText(url).then(() => showToast('📋 Link disalin!'));
+            }
+        }
+
+        function shareAsset() {
+            if (currentItem && navigator.share) {
+                navigator.share({ title: currentItem.Nama, url: `${window.location.origin}${window.location.pathname}?code=${currentItem
+                        .Kode}` }).catch(() => copyAssetLink());
+            } else copyAssetLink();
+        }
+
+        async function trackDownload(id) {
+            const sessionKey = 'download_' + id;
+            if (downloadSession.has(sessionKey)) return;
+            downloadSession.add(sessionKey);
+            await incrementDownloadFirebase(id);
+            let downloads = JSON.parse(localStorage.getItem(DOWNLOADS_KEY) || '{}');
+            downloads[id] = (downloads[id] || 0) + 1;
+            localStorage.setItem(DOWNLOADS_KEY, JSON.stringify(downloads));
+            renderAll();
+            showToast('⬇️ Download dicatat!');
+        }
+
+        // ============ DATA LOADING ============
+        function useCachedData() {
+            const cached = localStorage.getItem(CACHE_KEY);
+            if (!cached) return false;
+            try {
+                const { data } = JSON.parse(cached);
+                if (data && data.length) {
+                    allItems = data;
+                    initFuse();
+                    renderAll();
+                    openAssetFromURL();
+                    return true;
+                }
+            } catch (e) {}
+            return false;
+        }
+
+        async function fetchAndUpdate() {
+            try {
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 10000);
+                const res = await fetch(API_URL, { signal: controller.signal });
+                clearTimeout(timeoutId);
+                if (!res.ok) throw new Error('Status ' + res.status);
+                const raw = await res.json();
+                if (Array.isArray(raw) && raw.length) {
+                    allItems = raw.filter(i => i && typeof i === 'object').reverse();
+                    localStorage.setItem(CACHE_KEY, JSON.stringify({ data: allItems, timestamp: Date.now() }));
+                    isOffline = false;
+                    updateSyncStatus('● live', 'online');
+                    initFuse();
+                    renderAll();
+                    openAssetFromURL();
+                    showToast(`<i class="fas fa-check inline-icon"></i> ${allItems.length} asset dimuat`);
+                } else {
+                    throw new Error('Data kosong');
+                }
+            } catch (err) {
+                console.warn('Gagal fetch API:', err.message);
+                if (!allItems.length) {
+                    document.getElementById('cardGrid').innerHTML =
+                        `<div class="empty-state"><i class="fas fa-wifi"></i><h3>Gagal memuat data</h3><p>Server tidak merespons. Menggunakan cache jika tersedia.</p><button class="chip" onclick="loadData()">🔄 Coba Lagi</button></div>`;
+                }
+                updateSyncStatus('● offline', 'offline');
+                isOffline = true;
+            }
+        }
+
+        async function loadData() {
+            if (isLoading) return;
+            isLoading = true;
+            const hasCache = useCachedData();
+            if (!hasCache) {
+                document.getElementById('cardGrid').innerHTML = Array(8).fill('<div class="shimmer"></div>').join('');
+            }
+            loadFirebaseDownloads();
+            await fetchAndUpdate();
+            isLoading = false;
+        }
+
+        // ============ TAB NAVIGATION ============
+        function switchTab(tab) {
+            currentTab = tab;
+            document.querySelectorAll('.tab-page').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+            if (tab === 'beranda') {
+                document.getElementById('tabBeranda').classList.add('active');
+                document.querySelector('.nav-item[data-tab="beranda"]').classList.add('active');
+            } else {
+                document.getElementById('tabSemua').classList.add('active');
+                document.querySelector('.nav-item[data-tab="semua"]').classList.add('active');
+            }
+        }
+
+        // ============ THEME ============
+        function initTheme() {
+            const saved = localStorage.getItem('ctfy_theme') || 'dark';
+            const icon = document.getElementById('themeToggle').querySelector('i');
+            if (saved === 'light') { document.documentElement.setAttribute('data-theme', 'light');
+                icon.className = 'fas fa-sun'; } else { icon.className = 'fas fa-moon'; }
+            document.getElementById('themeToggle').addEventListener('click', () => {
+                const cur = document.documentElement.getAttribute('data-theme');
+                const icon = document.getElementById('themeToggle').querySelector('i');
+                if (cur === 'light') {
+                    document.documentElement.removeAttribute('data-theme');
+                    localStorage.setItem('ctfy_theme', 'dark');
+                    icon.className = 'fas fa-moon';
+                } else {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                    localStorage.setItem('ctfy_theme', 'light');
+                    icon.className = 'fas fa-sun';
+                }
+            });
+        }
+
+        // ============ EVENTS ============
+        function initEvents() {
+            const searchInput = document.getElementById('searchInput');
+            searchInput.addEventListener('input', () => {
+                clearTimeout(searchTimer);
+                searchTimer = setTimeout(applyFilters, 250);
+            });
+            document.getElementById('resetFiltersBtn').addEventListener('click', resetFilters);
+            document.getElementById('refreshNewest').addEventListener('click', () => { renderFeatured();
+                showToast('🔄 Terbaru diperbarui'); });
+            document.getElementById('refreshPopular').addEventListener('click', () => { renderFeatured();
+                showToast('🔄 Terpopuler diperbarui'); });
+
+            document.getElementById('notifEnableBtn').addEventListener('click', enableFCMNotifications);
+            document.getElementById('notifCloseBtn').addEventListener('click', hideNotifPopup);
+            document.getElementById('notifOverlay').addEventListener('click', function(e) { if (e.target === this) hideNotifPopup
+                    (); });
+            document.getElementById('notifSettingBtn').addEventListener('click', toggleNotif);
+
+            // Tab nav
+            document.querySelectorAll('.nav-item').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const tab = btn.dataset.tab;
+                    if (tab === 'beranda') switchTab('beranda');
+                    else switchTab('semua');
+                });
+            });
+
+            // Filter chips
+            function toggleFavFilter() {
+                currentFilter = currentFilter === 'fav' ? 'all' : 'fav';
+                applyFilters();
+            }
+            document.getElementById('favFilterChip').addEventListener('click', toggleFavFilter);
+
+            document.querySelectorAll('.chip[data-filter]').forEach(chip => {
+                chip.addEventListener('click', () => {
+                    if (chip.dataset.filter === currentFilter) return;
+                    currentFilter = chip.dataset.filter;
+                    applyFilters();
+                });
+            });
+
+            window.addEventListener('popstate', () => {
+                const params = new URLSearchParams(window.location.search);
+                const code = params.get('code');
+                code ? openModalByCode(code) : closeModal();
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeModal();
+                if (e.key === '/' && document.activeElement !== searchInput) {
+                    e.preventDefault();
+                    searchInput.focus();
+                }
+            });
+        }
+
+        // ============ EXPOSE GLOBALS ============
+        window.openModalByCode = openModalByCode;
+        window.closeModal = closeModal;
+        window.toggleFavorite = toggleFavorite;
+        window.copyAssetLink = copyAssetLink;
+        window.shareAsset = shareAsset;
+        window.resetFilters = resetFilters;
+        window.trackDownload = trackDownload;
+        window.copyCode = copyCode;
+        window.handleAdClick = handleAdClick;
+        window.loadData = loadData;
+
+        // ============ INIT ============
+        initTheme();
+        loadFavorites();
+        initEvents();
+        loadData();
+        initNotif();
+
+        // Switch to beranda by default
+        switchTab('beranda');
+
+        console.log('🚀 CTFY siap!');
+    </script>
 </body>
 </html>
