@@ -35,14 +35,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
 
-    <!-- Firebase -->
+    <!-- Firebase (hanya Firestore) -->
     <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js">
     </script>
     <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js">
-    </script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-messaging-compat.js">
-    </script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-analytics-compat.js">
     </script>
 
     <style>
@@ -772,113 +768,6 @@
             color: white;
         }
 
-        /* ===== NOTIF POPUP ===== */
-        .notif-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(8px);
-            align-items: center;
-            justify-content: center;
-            z-index: 2000;
-            padding: var(--spacing-md);
-        }
-        .notif-popup {
-            background: var(--bg-card);
-            border: 2px solid var(--primary);
-            border-radius: 20px;
-            max-width: 400px;
-            width: 100%;
-            padding: var(--spacing-md);
-            text-align: center;
-            animation: slideUp 0.3s ease;
-        }
-        @keyframes slideUp {
-            from {
-                transform: translateY(40px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-        .notif-icon svg {
-            width: 56px;
-            height: 56px;
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0%,
-            100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1);
-            }
-        }
-        .notif-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: var(--spacing-xs);
-        }
-        .notif-desc {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            margin-bottom: var(--spacing-md);
-        }
-        .notif-actions {
-            display: flex;
-            gap: 10px;
-        }
-        .notif-btn {
-            flex: 1;
-            padding: 12px;
-            border-radius: 12px;
-            border: none;
-            font-weight: 600;
-            cursor: pointer;
-            font-size: 0.8rem;
-            transition: all 0.2s;
-        }
-        .notif-btn-primary {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
-        }
-        .notif-btn-primary:hover {
-            opacity: 0.9;
-            transform: translateY(-1px);
-        }
-        .notif-btn-primary:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            transform: none;
-        }
-        .notif-btn-secondary {
-            background: var(--bg-hover);
-            color: var(--text-secondary);
-            border: 1px solid var(--border);
-        }
-        .notif-btn-secondary:hover {
-            background: var(--border);
-        }
-        .notif-loader {
-            display: none;
-            width: 20px;
-            height: 20px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-top-color: white;
-            border-radius: 50%;
-            animation: spin 0.8s linear infinite;
-            margin: 0 auto;
-        }
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
         /* ===== TOAST ===== */
         .toast {
             position: fixed;
@@ -987,9 +876,6 @@
             .paid-grid {
                 grid-template-columns: 1fr 1fr;
             }
-            .notif-popup {
-                max-width: 90vw;
-            }
             .bottom-nav {
                 height: 60px;
             }
@@ -1029,39 +915,10 @@
                 </a>
                 <div class="header-actions">
                     <button id="themeToggle" class="icon-btn" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
-                    <button id="notifSettingBtn" class="icon-btn" aria-label="Notification settings" title="Notifikasi"><i class="far fa-bell"></i></button>
                 </div>
             </div>
         </div>
     </header>
-
-    <!-- ===== NOTIF POPUP ===== -->
-    <div class="notif-overlay" id="notifOverlay">
-        <div class="notif-popup">
-            <div class="notif-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
-                    <path d="M13.73 21a2 2 0 0 1-3.46 0" />
-                    <path d="M12 3v2" />
-                    <path d="M12 13v2" />
-                    <path d="M8 7l2 2" />
-                    <path d="M16 7l-2 2" />
-                </svg>
-            </div>
-            <div class="notif-title">Jangan sampai ketinggalan asset baru!</div>
-            <div class="notif-desc">Aktifkan notifikasi untuk update template terbaru langsung ke browser kamu.</div>
-            <div class="notif-actions">
-                <button class="notif-btn notif-btn-primary" id="notifEnableBtn">
-                    <span id="notifBtnText">🔔 Aktifkan Notifikasi</span>
-                    <div class="notif-loader" id="notifLoader"></div>
-                </button>
-                <button class="notif-btn notif-btn-secondary" id="notifCloseBtn">✕ Nanti</button>
-            </div>
-            <div style="margin-top:12px;font-size:0.6rem;color:var(--text-secondary);">
-                <i class="fas fa-lock"></i> Kami tidak spam. Notifikasi hanya untuk update asset penting.
-            </div>
-        </div>
-    </div>
 
     <!-- ===== MAIN ===== -->
     <main>
@@ -1095,7 +952,6 @@
                 <div class="stat-item"><i class="fas fa-search"></i> <span class="num" id="statFiltered">0</span> hasil</div>
                 <div class="stat-item"><i class="fas fa-tag"></i> <span class="num" id="statCategories">0</span> kategori</div>
                 <div class="stat-item"><i class="fas fa-download"></i> <span class="num" id="statDownloads">0</span> total downloads <span class="sync-status" id="syncStatus">● connecting...</span></div>
-                <div class="stat-item" id="notifStatusItem" style="display:none;"><span class="sync-status online" id="notifStatus"></span></div>
             </div>
 
             <!-- ===== TAB 1: BERANDA ===== -->
@@ -1204,22 +1060,16 @@
             measurementId: "G-15SJYB7TNN"
         };
 
-        const VAPID_KEY = "BMLcOdjW6SrJEEZirGuGTXYKI8o36q7sGdQ3oc9DrKWuEwG0YKc1Ggg266meAB4-SHw-lF8y-pI02BJHk7t4W0I";
         const WA_NUMBER = '6285745535579';
         const ORDER_EMAIL = 'myxrin2748@gmail.com';
         const API_URL = 'https://script.google.com/macros/s/AKfycbxGBXI-W9rj6PzpeoSf_84HBq4CQnXwD9CoynIoRIfD9RWWyfArU7qf9R8yl4DTOchs/exec';
         const CACHE_KEY = 'ctfy_v90_data';
         const FAVORITES_KEY = 'ctfy_favorites';
         const DOWNLOADS_KEY = 'ctfy_downloads';
-        const NOTIF_PROMPT_KEY = 'ctfy_notif_prompt_seen';
-        const NOTIF_ENABLED_KEY = 'ctfy_notif_enabled';
-        const FCM_TOKEN_KEY = 'ctfy_fcm_token';
 
         // ============ GLOBAL STATE ============
         let db = null;
-        let messaging = null;
         let firebaseInitialized = false;
-        let fcmSupported = false;
         let downloadSession = new Set();
         let isOffline = false;
         let isLoading = false;
@@ -1229,8 +1079,6 @@
         let currentFilter = 'all';
         let fuseInstance = null;
         let searchTimer = null;
-        let notifEnabled = false;
-        let fcmToken = null;
         let currentTab = 'beranda';
 
         // ============ FIREBASE INIT ============
@@ -1239,14 +1087,6 @@
             db = firebase.firestore();
             firebaseInitialized = true;
             updateSyncStatus('● live', 'online');
-            try {
-                messaging = firebase.messaging();
-                fcmSupported = true;
-                console.log('[FCM] Messaging initialized');
-            } catch (e) {
-                console.warn('[FCM] Messaging not supported:', e.message);
-                fcmSupported = false;
-            }
         } catch (e) {
             console.error('Firebase init error:', e);
             updateSyncStatus('● local', 'local');
@@ -1382,169 +1222,6 @@
             }
         }
 
-        // ============ FCM (diringkas) ============
-        async function getFCMToken() {
-            if (!fcmSupported || !messaging) return null;
-            try {
-                const registration = await navigator.serviceWorker.register('./firebase-messaging-sw.js');
-                const currentToken = await messaging.getToken({
-                    vapidKey: VAPID_KEY,
-                    serviceWorkerRegistration: registration
-                });
-                return currentToken || null;
-            } catch (err) { console.error(err); return null; }
-        }
-
-        async function saveFCMTokenToFirestore(token) {
-            if (!firebaseInitialized || !db || !token) return false;
-            try {
-                await db.collection("fcm_tokens").doc(token).set({
-                    token: token,
-                    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-                    userAgent: navigator.userAgent.substring(0, 200),
-                    platform: navigator.platform || 'unknown'
-                });
-                return true;
-            } catch (err) { console.error(err); return false; }
-        }
-
-        async function deleteFCMToken() {
-            if (!fcmSupported || !messaging || !fcmToken) return;
-            try {
-                await messaging.deleteToken({ vapidKey: VAPID_KEY });
-                if (firebaseInitialized && db) await db.collection("fcm_tokens").doc(fcmToken).delete();
-            } catch (err) { console.error(err); }
-        }
-
-        async function enableFCMNotifications() {
-            const enableBtn = document.getElementById('notifEnableBtn');
-            const btnText = document.getElementById('notifBtnText');
-            const loader = document.getElementById('notifLoader');
-            if (enableBtn) enableBtn.disabled = true;
-            if (btnText) btnText.style.display = 'none';
-            if (loader) loader.style.display = 'block';
-            try {
-                if (typeof Notification === 'undefined') throw new Error('Browser tidak mendukung notifikasi');
-                const permission = await Notification.requestPermission();
-                if (permission !== 'granted') {
-                    notifEnabled = false;
-                    localStorage.setItem(NOTIF_ENABLED_KEY, 'false');
-                    localStorage.setItem(NOTIF_PROMPT_KEY, 'true');
-                    updateNotifUI();
-                    hideNotifPopup();
-                    showToast('⚠️ Notifikasi browser ditolak.');
-                    return;
-                }
-                fcmToken = await getFCMToken();
-                if (!fcmToken) {
-                    notifEnabled = true;
-                    localStorage.setItem(NOTIF_ENABLED_KEY, 'true');
-                    localStorage.setItem(NOTIF_PROMPT_KEY, 'true');
-                    localStorage.removeItem(FCM_TOKEN_KEY);
-                    updateNotifUI();
-                    hideNotifPopup();
-                    showToast('🔔 Notifikasi dasar diaktifkan!');
-                    return;
-                }
-                localStorage.setItem(FCM_TOKEN_KEY, fcmToken);
-                await saveFCMTokenToFirestore(fcmToken);
-                notifEnabled = true;
-                localStorage.setItem(NOTIF_ENABLED_KEY, 'true');
-                localStorage.setItem(NOTIF_PROMPT_KEY, 'true');
-                updateNotifUI();
-                hideNotifPopup();
-                showToast('🔔 Notifikasi FCM diaktifkan!');
-            } catch (err) {
-                console.error(err);
-                notifEnabled = false;
-                localStorage.setItem(NOTIF_ENABLED_KEY, 'false');
-                localStorage.setItem(NOTIF_PROMPT_KEY, 'true');
-                updateNotifUI();
-                hideNotifPopup();
-                showToast('❌ Gagal mengaktifkan notifikasi.');
-            } finally {
-                if (enableBtn) enableBtn.disabled = false;
-                if (btnText) btnText.style.display = '';
-                if (loader) loader.style.display = 'none';
-            }
-        }
-
-        // ============ NOTIF UI ============
-        function initNotif() {
-            notifEnabled = localStorage.getItem(NOTIF_ENABLED_KEY) === 'true';
-            fcmToken = localStorage.getItem(FCM_TOKEN_KEY) || null;
-            updateNotifUI();
-            if (notifEnabled && fcmToken) {
-                // auto subscribe jika perlu
-            }
-            if (notifEnabled) {
-                if (typeof Notification !== 'undefined' && Notification.permission !== 'granted') {
-                    notifEnabled = false;
-                    localStorage.setItem(NOTIF_ENABLED_KEY, 'false');
-                    localStorage.removeItem(FCM_TOKEN_KEY);
-                    updateNotifUI();
-                }
-                return;
-            }
-            const prompted = localStorage.getItem(NOTIF_PROMPT_KEY) === 'true';
-            if (prompted) return;
-            setTimeout(showNotifPopup, 3000);
-        }
-
-        function showNotifPopup() {
-            if (notifEnabled) return;
-            if (typeof Notification === 'undefined') return;
-            if (Notification.permission === 'granted') { enableFCMNotifications(); return; }
-            if (Notification.permission === 'denied') { localStorage.setItem(NOTIF_PROMPT_KEY, 'true'); return; }
-            document.getElementById('notifOverlay').style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        }
-
-        function hideNotifPopup() {
-            document.getElementById('notifOverlay').style.display = 'none';
-            document.body.style.overflow = '';
-            localStorage.setItem(NOTIF_PROMPT_KEY, 'true');
-        }
-
-        function updateNotifUI() {
-            const btn = document.getElementById('notifSettingBtn');
-            const icon = btn?.querySelector('i');
-            const statusItem = document.getElementById('notifStatusItem');
-            const statusEl = document.getElementById('notifStatus');
-            if (notifEnabled) {
-                if (icon) icon.className = 'fas fa-bell';
-                if (btn) btn.style.color = 'var(--primary)';
-                if (statusItem) statusItem.style.display = 'flex';
-                if (statusEl) { statusEl.textContent = fcmToken ? '🔔 FCM aktif' : '🔔 Notifikasi aktif';
-                    statusEl.className = 'sync-status online'; }
-            } else {
-                if (icon) icon.className = 'far fa-bell';
-                if (btn) btn.style.color = 'var(--text-secondary)';
-                if (statusItem) statusItem.style.display = 'none';
-            }
-        }
-
-        async function toggleNotif() {
-            if (notifEnabled) {
-                await deleteFCMToken();
-                notifEnabled = false;
-                fcmToken = null;
-                localStorage.setItem(NOTIF_ENABLED_KEY, 'false');
-                localStorage.removeItem(FCM_TOKEN_KEY);
-                updateNotifUI();
-                showToast('🔕 Notifikasi dimatikan');
-            } else {
-                if (typeof Notification !== 'undefined' && Notification.permission === 'granted') {
-                    await enableFCMNotifications();
-                } else if (typeof Notification !== 'undefined' && Notification.permission === 'denied') {
-                    showToast('⚠️ Izin notifikasi diblokir browser.');
-                } else {
-                    localStorage.removeItem(NOTIF_PROMPT_KEY);
-                    showNotifPopup();
-                }
-            }
-        }
-
         // ============ FAVORITES ============
         function loadFavorites() {
             try { const s = localStorage.getItem(FAVORITES_KEY); if (s) favorites = new Set(JSON.parse(s)); } catch (e) {}
@@ -1612,9 +1289,6 @@
                     badgeText = '🔜 Coming Soon'; }
                 if (getTrending(item.Kode)) badgeText += ' 🔥';
                 const dls = getDownloads(item.Kode);
-                // Untuk featured list, download count tetap ditampilkan (kecuali paid? kita tetap tampilkan di sini biar informatif)
-                // tapi karena diminta "count download ga usah ditampilkan" untuk berbayar, kita sembunyikan di card/paid grid
-                // di featured list kita tetap tampilkan untuk konsistensi, tapi kita bisa sembunyikan jika paid
                 const showDownloads = !isPaidItem(item);
                 return `
                     <div class="featured-list-item" onclick="${isComingSoon(item) ? '' : `openModalByCode('${escapeHTML(item.Kode)}')`}">
@@ -1748,7 +1422,6 @@
             document.getElementById('statFiltered').innerText = filtered.length;
             document.getElementById('statTotal').innerText = allItems.length;
             updateActiveChip();
-            // update badge di nav
             document.getElementById('navBadge').innerText = allItems.length;
         }
 
@@ -2047,12 +1720,6 @@
             document.getElementById('refreshPopular').addEventListener('click', () => { renderFeatured();
                 showToast('🔄 Terpopuler diperbarui'); });
 
-            document.getElementById('notifEnableBtn').addEventListener('click', enableFCMNotifications);
-            document.getElementById('notifCloseBtn').addEventListener('click', hideNotifPopup);
-            document.getElementById('notifOverlay').addEventListener('click', function(e) { if (e.target === this) hideNotifPopup
-                    (); });
-            document.getElementById('notifSettingBtn').addEventListener('click', toggleNotif);
-
             // Tab nav
             document.querySelectorAll('.nav-item').forEach(btn => {
                 btn.addEventListener('click', () => {
@@ -2108,7 +1775,6 @@
         loadFavorites();
         initEvents();
         loadData();
-        initNotif();
 
         // Switch to beranda by default
         switchTab('beranda');
